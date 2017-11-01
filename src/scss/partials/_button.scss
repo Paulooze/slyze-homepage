@@ -1,0 +1,17 @@
+.button {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all .4s ease-in-out;
+
+  &.button--facebook {
+    background: $facebook;
+    color: #fff;
+
+    &:hover {
+      background: darken($facebook, 10%);
+    }
+  }
+}

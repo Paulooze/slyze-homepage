@@ -1,0 +1,26 @@
+.hero {
+  height: 430px;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 7px 7px rgba(0, 0, 0, .4);
+
+  .large {
+    font-size: 60px;
+    display: block;
+  }
+}

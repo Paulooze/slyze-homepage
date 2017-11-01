@@ -1,0 +1,21 @@
+@import "base";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 100%;
+  line-height: 1.6;
+  color: $grey;
+  font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+}
+
+body {
+  background: url("/img/hero-background.jpg") center top no-repeat #fff;
+}
+
+.container {
+  @include container;
+}
