@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'ok'",
     "dev": "./node_modules/.bin/gulp serve",
-    "build": "rm -r ./static && ./node_modules/.bin/gulp build && sh ./build.sh"
+    "build": "./node_modules/.bin/gulp build && sh ./build.sh"
   },
   "repository": {
     "type": "git",
@@ -24,8 +24,5 @@
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1"
-  },
-  "dependencies": {
-    "http-proxy": "^1.16.2"
   }
 }
