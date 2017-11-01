@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'ok'",
     "dev": "./node_modules/.bin/gulp serve",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "rm -r ./static && ./node_modules/.bin/gulp build && sh ./build.sh"
   },
   "repository": {
     "type": "git",
