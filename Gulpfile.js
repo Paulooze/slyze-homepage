@@ -1,31 +1,41 @@
+/* eslint-disable */
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const babel = require('gulp-babel');
+const webpack = require('webpack');
+const gulpWebpack = require('gulp-webpack');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 
-gulp.task('sass', () => gulp
+const webpackConfig = require('./webpack.config');
+const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+
+//const 
+
+gulp.task('sass', () => {
+  const plugins = [
+    autoprefixer(),
+  ];
+  environment === 'production' && plugins.push(cssnano());
+  gulp
   .src('./src/scss/main.scss')
   .pipe(sass({
     errorLogToConsole: true,
     outputStyle: 'expanded',
   }).on('error', sass.logError))
   .pipe(sourcemaps.init())
-  .pipe(postcss([autoprefixer()]))
+  .pipe(postcss(plugins))
   .pipe(sourcemaps.write('.'))
   .pipe(gulp.dest('./dist/css'))
   .pipe(browserSync.stream())
-);
+});
 
-gulp.task('babel', () => gulp
+gulp.task('webpack', () => gulp
   .src('./src/js/main.js')
-  .pipe(babel({
-    presets: ['env'],
-  }))
-  .pipe(gulp.dest('./dist/js'))
-);
+  .pipe(gulpWebpack(webpackConfig, webpack))
+  .pipe(gulp.dest('./dist/js')));
 
 gulp.task('serve', () => {
   browserSync.init({
@@ -34,9 +44,9 @@ gulp.task('serve', () => {
     },
   });
   gulp.watch(['./src/scss/*.scss', './src/scss/partials/*.scss'], ['sass']);
-  gulp.watch(['./src/js/*.js'], ['babel']);
+  gulp.watch(['./src/js/*.js'], ['webpack']);
   gulp.watch(['./index.html']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['serve']);
-gulp.task('build', ['sass', 'babel']);
+gulp.task('build', ['sass', 'webpack']);

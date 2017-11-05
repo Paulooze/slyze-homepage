@@ -33,6 +33,12 @@
     background: $blue;
     color: #fff;
   }
+
+  @include for-phone-only {
+    font-size: .8em;
+    font-weight: 400;
+    text-align: center;
+  }
 }
 
 .table {

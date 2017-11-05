@@ -1,6 +1,13 @@
+.tables {
+  overflow-x: auto;
+  position: relative;
+}
+
 .servis-table {
-  width: 100%;
   margin: 40px 0 0;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
 
   &:not(.is-active) {
     display: none;
@@ -13,6 +20,8 @@
   &__cell {
     height: 55px;
     width: 95px;
+    white-space: nowrap;
+    padding: 0 20px;
     vertical-align: middle;
     text-align: center;
     border-right: 1px solid #ececec;

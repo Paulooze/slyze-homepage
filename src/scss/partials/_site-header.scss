@@ -68,25 +68,41 @@
 }
 
 .header-logo {
+  height: 70px;
   display: block;
   background: $orange;
-  @include for-phone-only {
-    height: 70px;
+
+  @include for-tablet-landscape-up {
+    height: auto;
   }
 }
 
 .header-logo__image {
-  @include for-phone-only {
-    height: 100%;
-  }
+  height: 100%;
 }
 
 .main-nav {
   display: none;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  left: 0;
+  box-shadow: 0 7px 15px rgba(0, 0, 0, .2);
+
+  &.is-active {
+    display: block;
+  }
+
   @include for-tablet-landscape-up {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    margin-left: 30px;
+    position: static;
+    box-shadow: none;
+  }
+
+  @include for-desktop-up {
     margin-left: 100px;
   }
 }
@@ -94,29 +110,96 @@
 .main-nav__link {
   display: flex;
   align-items: center;
-  padding: 0 27.5px;
-  font-size: 1em;
+  background: $blue;
+  color: #fff;
+  height: 50px;
   text-decoration: none;
-  color: $grey;
-  border-bottom: 3px solid transparent;
-  transition: all .4s ease-in-out;
+  padding: 0 15px;
 
-  &:not(:last-child) {
-    //margin-right: 55px;
+  @include for-tablet-landscape-up {
+    align-items: center;
+    padding: 0 10px;
+    font-size: 1em;
+    text-decoration: none;
+    background: transparent;
+    color: $grey;
+    height: auto;
+    border-bottom: 3px solid transparent;
+    transition: all .4s ease-in-out;
+  
+    &:not(:last-child) {
+      //margin-right: 55px;
+    }
+  
+    &:hover {
+      color: $blue;
+      border-color: $blue;
+    }
   }
 
-  &:hover {
-    color: $blue;
-    border-color: $blue;
+  @include for-desktop-up {
+    padding: 0 27.5px;
   }
 }
 
 .main-nav__button {
-  @include for-phone-only {
-    display: none;
-  }
+  display: none;
   @include for-tablet-landscape-up {
+    display: flex;
     margin-left: auto;
     width: 170px;
+  }
+}
+
+.nav-toggle {
+  outline: 0;
+  width: 42px;
+  height: 36px;
+  position: relative;
+  margin: 0 15px 0 auto;
+  align-self: center;
+  transition: all .4s ease-in-out;
+
+  &__line {
+    position: absolute;
+    height: 6px;
+    right: 0;
+    left: 0;
+    background: $blue;
+    border-radius: 4px;
+    transition: all .4s ease-in-out;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:nth-child(2) {
+      top: 15px;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+
+  &.is-open {
+    transform: rotate(45deg);
+    .nav-toggle__line {
+      &:first-child {
+        top: 50%;
+        transform: translate3d(0, -50%, 0) rotate(-90deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:last-child {
+        bottom: 50%;
+        transform: translate3d(0, 50%, 0);
+      }
+    }
+  }
+
+  @include for-tablet-landscape-up {
+    display: none;
   }
 }

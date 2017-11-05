@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb-base"],
+  "globals": {
+    "google": true,
+    "document": true,
+    "YT": true,
+  },
+  "rules": {
+    "no-unused-vars": [0]
+  },
+  "env": {
+    "browser": true
+  }
+}

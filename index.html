@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="sk" dir="ltr">
   <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67961404-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-67961404-1');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
@@ -24,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="/dist/css/main.css">
   </head>
-  <body id="app">
+  <body>
     <header class="site-header" role="banner">
       <div class="top-header">
         <div class="container top-header__container">
@@ -38,26 +46,30 @@
           </div>
         </div>
       </div>
-      <div class="bottom-header">
+      <div class="bottom-header" id="menu">
         <div class="container bottom-header__container">
           <a href="/" class="header-logo">
             <img src="/img/header-logo.png" alt="Slyze" class="header-logo__image">
           </a>
-          <nav class="main-nav" role="navigation">
-            <a href="#domov" class="main-nav__link">Domov</a>
-            <a href="#" class="main-nav__link">O nás</a>
-            <a href="#" class="main-nav__link">Servis</a>
-            <a href="#" class="main-nav__link">Požičovňa</a>
-            <a href="#" class="main-nav__link">Bazár</a>
-            <a href="#" class="main-nav__link">Kontakt</a>
+          <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
+            <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
+            <a href="#o-nas" class="main-nav__link" v-on:click.prevent="scrollToSection">O nás</a>
+            <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
+            <a href="#pozicovna" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
+            <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
           </nav>
+          <button role="button" class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}">
+            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
+            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
+            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span> 
+          </button>
           <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/ServisLyziSLYZE" class="main-nav__button button button--facebook">
             Náš Facebook
           </a>
         </div>
       </div>
     </header>
-    <section class="hero">
+    <section class="hero" id="domov">
       <div class="hero__container container">
         <h1 class="hero__title">
           Požičovňa <span class="large">lyží a snowboardov</span> v Bratislave
@@ -80,8 +92,9 @@
         </div>
       </div>
     </section>
-    <section class="main-section main-section--right">
+    <section class="main-section main-section--right" id="o-nas">
       <div class="container main-section__container">
+        <img src="/img/skiing.png" class="main-section__image" aria-hidden="true">
         <div class="main-section__content">
           <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
           <div class="lists">
@@ -101,8 +114,8 @@
         </div>
       </div>
     </section>
-    <section class="main-section main-section--left">
-      <div class="container main-section__container">
+    <section class="main-section main-section--left main-section--video" id="servis">
+      <div class="container main-section__container main-section__container--video">
         <div class="main-section__content" id="tabs">
           <h1 class="main-section__title main-section__title--left" data-title="Servis">Servis</h1>
           <p class="main-section__text">Už 8 rokov vám ponúkame bezkonkurenčný servis v Bratislave.</p>
@@ -168,9 +181,15 @@
             </div>
           </div>
         </div>
+        <div class="video" id="video-wrapper">
+          <div class="video__overlay" v-bind:class="{ 'is-hidden': !visible }">
+            <button class="video__play-button" v-on:click.prevent="onPlayButtonClick">&nbsp;</button>
+          </div>
+          <div id="video" class="video__player"></div>
+        </div>
       </div>
     </section>
-    <section class="main-section main-section--center">
+    <section class="main-section main-section--center" id="pozicovna">
       <div class="container main-section__container">
         <div class="main-section__content" id="pozicovna">
           <h1 class="main-section__title main-section__title--center" data-title="Požičovňa">Požičovňa</h1>
@@ -385,14 +404,42 @@
         </div>
       </div>
     </section>
-    <section class="main-section main-section--right">
-      <div class="container main-section__container">
+    <section class="main-section main-section--right main-section--last" id="kontakt">
+      <div class="container main-section__container main-section__container--map">
+        <div id="map" class="map"></div>
         <div class="main-section__content">
           <h1 class="main-section__title main-section__title--left" data-title="Kontakt">Kontakt</h1>
+          <div class="map-cols">
+            <div class="map-cols__item">
+              <h2>Centrála</h2>
+              <p>
+                Karloveská 6C <br>
+                841 04, Bratislava - Karlova Ves
+              </p>
+            </div>
+            <div class="map-cols__item">
+              <h2>Informácie</h2>
+              <p>
+                Telefón: <a href="tel:+421944411758">0944 411 758</a> <br>
+                E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
+              </p>
+            </div>
+          </div>
+          <h2>Otváracie hodiny</h2>
+          <p>
+            PO-SO: 09:00-19:00 (13:00-14:00 prestávka)
+            
+          </p>
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
-    <script async src="./dist/js/main.js"></script>
+    <footer class="site-footer">
+      <div class="container site-footer__container">
+        &copy; 2017 | SLYZE, s.r.o. Všetky práva vyhradené.
+      </div>
+    </footer>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initMap"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./dist/js/main.js"></script>
   </body>
 </html>

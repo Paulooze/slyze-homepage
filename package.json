@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'ok'",
     "dev": "./node_modules/.bin/gulp serve",
-    "build": "./node_modules/.bin/gulp build && sh ./build.sh"
+    "build": "NODE_ENV=production ./node_modules/.bin/gulp build && sh ./build.sh"
   },
   "repository": {
     "type": "git",
@@ -17,15 +17,24 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
     "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1"
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-webpack": "^1.5.0",
+    "webpack": "^3.8.1"
   },
   "dependencies": {
-    "http-proxy": "^1.16.2"
+    "http-proxy": "^1.16.2",
+    "scroll-to-element": "^2.0.0",
+    "vue": "^2.5.3"
   }
 }

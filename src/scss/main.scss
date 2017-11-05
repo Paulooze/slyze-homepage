@@ -13,9 +13,30 @@ body {
 }
 
 body {
-  background: url("/img/hero-background.jpg") center top no-repeat #fff;
+  background: url("/img/hero-background-small.jpg") center top no-repeat #fff;
+  width: 100vw;
+  overflow-x: hidden;
+
+  @include for-tablet-landscape-up {
+    background: url("/img/hero-background.jpg") center top no-repeat #fff;
+  }
 }
 
 .container {
   @include container;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+a {
+  color: $orange;
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    color: darken($orange, 15%);
+  }
 }

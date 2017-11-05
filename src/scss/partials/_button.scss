@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  border: 0;
   transition: all .4s ease-in-out;
 
   &.button--facebook {
@@ -13,5 +14,18 @@
     &:hover {
       background: darken($facebook, 10%);
     }
+  }
+
+  &.button--blue {
+    background: $blue;
+    color: #fff;
+
+    &:hover {
+      background: darken($blue, 10%);
+    }
+  }
+
+  &.button--clear {
+    background: transparent;
   }
 }

@@ -1,0 +1,11 @@
+.site-footer {
+  background: #191a26;
+  color: $orange;
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+  &__container {
+    padding: 0 15px;
+  }
+}
