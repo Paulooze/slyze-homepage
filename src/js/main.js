@@ -81,17 +81,15 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   });
 };
 
-window.initMap = function initMap() {
-  const location = {
-    lat: 48.153,
-    lng: 17.06192,
-  };
-  const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
-    center: location,
-  });
-  const marker = new google.maps.Marker({
-    position: location,
-    map,
-  });
+const location = {
+  lat: 48.153,
+  lng: 17.06192,
 };
+const map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 16,
+  center: location,
+});
+const marker = new google.maps.Marker({
+  position: location,
+  map,
+});
