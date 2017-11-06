@@ -3,26 +3,7 @@ const webpack = require('webpack');
 
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
-let plugins = [];
-
-if (environment === 'production') {
-  plugins = [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: environment,
-      },
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-      sourceMap: false,
-    }),
-  ];
-}
+console.log(`Building for environment ${environment}`); // eslint-disable-line no-console
 
 module.exports = {
   entry: [
@@ -41,5 +22,25 @@ module.exports = {
       },
     ],
   },
-  plugins,
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.common.js',
+    },
+  },
+  devtool: false,
+  context: __dirname,
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+    }),
+    environment === 'production' && new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      output: {
+        comments: false,
+      },
+      sourceMap: false,
+    }),
+  ],
 };

@@ -9,10 +9,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 
-const webpackConfig = require('./webpack.config');
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
-
-//const 
 
 gulp.task('sass', () => {
   const plugins = [
@@ -34,7 +31,7 @@ gulp.task('sass', () => {
 
 gulp.task('webpack', () => gulp
   .src('./src/js/main.js')
-  .pipe(gulpWebpack(webpackConfig, webpack))
+  .pipe(gulpWebpack(Object.create(require('./webpack.config')), webpack))
   .pipe(gulp.dest('./dist/js')));
 
 gulp.task('serve', () => {
