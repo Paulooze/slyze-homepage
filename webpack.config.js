@@ -7,6 +7,11 @@ let plugins = [];
 
 if (environment === 'production') {
   plugins = [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: environment,
+      },
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
