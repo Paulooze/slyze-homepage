@@ -124,6 +124,10 @@
 .list {
   list-style: disc;
   margin-left: 35px;
+
+  @include for-tablet-landscape-up {
+    flex: 1;
+  }
 }
 
 .list__item {
@@ -145,9 +149,5 @@
   @include for-tablet-landscape-up {
     display: flex;
     flex-direction: row;
-
-    .list {
-      flex: 1;
-    }
   }
 }

@@ -62,6 +62,9 @@ gulp.task('critical', () => {
     }, {
       width: 1440,
       height: 900,
+    }, {
+      width: 1920,
+      height: 1080,
     }],
   };
   gulp.src('./index.html')

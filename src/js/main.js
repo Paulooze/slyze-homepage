@@ -97,3 +97,15 @@ const marker = new google.maps.Marker({
   position: location,
   map,
 });
+
+[].forEach.call(document.querySelectorAll('img[data-src]'), (img) => {
+  img.setAttribute('src', img.getAttribute('data-src'));
+  img.onload = () => img.removeAttribute('data-src'); // eslint-disable-line no-param-reassign
+});
+
+WebFont.load({
+  google: {
+    families: ['Montserrat:300,400,600,700,900:latin-ext'],
+  },
+  timeout: 3000,
+});

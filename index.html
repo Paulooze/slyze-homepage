@@ -47,7 +47,7 @@
       <div class="bottom-header" id="menu">
         <div class="container bottom-header__container">
           <a href="/" class="header-logo">
-            <img src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
+            <img data-src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
           </a>
           <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
             <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
@@ -56,7 +56,7 @@
             <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
             <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
           </nav>
-          <button role="button" class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}">
+          <button class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}">
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span> 
@@ -92,7 +92,7 @@
     </section>
     <section class="main-section main-section--right" id="o-nas">
       <div class="container main-section__container">
-        <img src="./dist/img/skiing.png" class="main-section__image" aria-hidden="true">
+        <img data-src="./dist/img/skiing.png" class="main-section__image" aria-hidden="true">
         <div class="main-section__content">
           <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
           <div class="lists">
@@ -116,13 +116,13 @@
         <div class="main-section__content" id="tabs">
           <h1 class="main-section__title main-section__title--left" data-title="Servis">Servis</h1>
           <p class="main-section__text">Už 9 rokov vám ponúkame bezkonkurenčný servis v Bratislave.</p>
-          <div class="tabs" role="tablist">
-            <a role="tab" aria-controls="table1" v-bind:aria-selected="id === 1 ? 'true' : 'false'" href="#servis-lyzi" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Servis lyží</a>
-            <a role="tab" aria-controls="table2" v-bind:aria-selected="id === 2 ? 'true' : 'false'" href="#servis-snowboardov" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Servis snowboardov</a>
-            <a role="tab" aria-controls="table3" v-bind:aria-selected="id === 3 ? 'true' : 'false'" href="#montaz-viazania" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Montáž viazania</a>
+          <div class="tabs">
+            <a role="tab" href="#servis-lyzi" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Servis lyží</a>
+            <a role="tab" href="#servis-snowboardov" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Servis snowboardov</a>
+            <a role="tab" href="#montaz-viazania" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Montáž viazania</a>
           </div>
           <div class="tables">
-            <div class="table" v-bind:class="{'is-active': id === 1}" role="tabpanel" aria-labelledby="table1" v-bind:aria-hidden="id === 1 ? 'false' : 'true'">
+            <div class="table" v-bind:class="{'is-active': id === 1}">
               <div class="table__row">
                 <div class="table__col table__col--large">Brúsenie na páse</div>
                 <div class="table__col">10 &euro;</div>
@@ -140,7 +140,7 @@
                 <div class="table__col">20 &euro;</div>
               </div>
             </div>
-            <div class="table" v-bind:class="{'is-active': id === 2}" role="tabpanel" aria-labelledby="table2" v-bind:aria-hidden="id === 2 ? 'false' : 'true'">
+            <div class="table" v-bind:class="{'is-active': id === 2}">
               <div class="table__row">
                 <div class="table__col table__col--large">Brúsenie na páse</div>
                 <div class="table__col">15 &euro;</div>
@@ -158,7 +158,7 @@
                 <div class="table__col">25 &euro;</div>
               </div>
             </div>
-            <div class="table" v-bind:class="{'is-active': id === 3}" role="tabpanel" aria-labelledby="table3" v-bind:aria-hidden="id === 3 ? 'false' : 'true'">
+            <div class="table" v-bind:class="{'is-active': id === 3}">
               <div class="table__row">
                 <div class="table__col table__col--large">Montáž viazania</div>
                 <div class="table__col">15 &euro;</div>
@@ -191,13 +191,13 @@
         <div class="main-section__content" id="pozicovna">
           <h1 class="main-section__title main-section__title--center" data-title="Požičovňa">Požičovňa</h1>
           <div class="tabs tabs--small tabs--center" role="tablist">
-            <a role="tab" aria-controls="pozicovna1" v-bind:aria-selected="id === 1 ? 'true' : 'false'" href="#snowboard" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Lyže</a>
-            <a role="tab" aria-controls="pozicovna2" v-bind:aria-selected="id === 2 ? 'true' : 'false'" href="#lyze" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Snowboard</a>
-            <a role="tab" aria-controls="pozicovna3" v-bind:aria-selected="id === 3 ? 'true' : 'false'" href="#prilba" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Prilba</a>
-            <a role="tab" aria-controls="pozicovna4" v-bind:aria-selected="id === 4 ? 'true' : 'false'" href="#topanky" class="tabs__item" v-on:click.prevent="setActiveTab(4)" v-bind:class="{'is-active': id === 4}">Topánky</a>
+            <a role="tab" href="#snowboard" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Lyže</a>
+            <a role="tab" href="#lyze" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Snowboard</a>
+            <a role="tab" href="#prilba" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Prilba</a>
+            <a role="tab" href="#topanky" class="tabs__item" v-on:click.prevent="setActiveTab(4)" v-bind:class="{'is-active': id === 4}">Topánky</a>
           </div>
           <div class="tables">
-            <table class="servis-table" v-bind:class="{'is-active': id === 1}" role="tabpanel" aria-labelledby="pozicovna1" v-bind:aria-hidden="id === 1 ? 'false' : 'true'">
+            <table class="servis-table" v-bind:class="{'is-active': id === 1}" role="tabpanel">
               <thead class="servis-table__head">
                 <tr class="servis-table__row">
                   <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
@@ -258,7 +258,7 @@
                 </tr>
               </tbody>
             </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 2}" role="tabpanel" aria-labelledby="pozicovna2" v-bind:aria-hidden="id === 2 ? 'false' : 'true'">
+            <table class="servis-table" v-bind:class="{'is-active': id === 2}">
               <thead class="servis-table__head">
                 <tr class="servis-table__row">
                   <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
@@ -319,7 +319,7 @@
                 </tr>
               </tbody>
             </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 3}" role="tabpanel" aria-labelledby="pozicovna3" v-bind:aria-hidden="id === 3 ? 'false' : 'true'">
+            <table class="servis-table" v-bind:class="{'is-active': id === 3}">
               <thead class="servis-table__head">
                 <tr class="servis-table__row">
                   <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
@@ -358,7 +358,7 @@
                 </tr>
               </tbody>
             </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 4}" role="tabpanel" aria-labelledby="pozicovna4" v-bind:aria-hidden="id === 4 ? 'false' : 'true'">
+            <table class="servis-table" v-bind:class="{'is-active': id === 4}">
               <thead class="servis-table__head">
                 <tr class="servis-table__row">
                   <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
@@ -437,15 +437,8 @@
     </footer>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc"></script>
     <script async src="https://www.youtube.com/iframe_api"></script>
-    <script src="./dist/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-      WebFont.load({
-        google: {
-          families: ['Montserrat:300,400,600,700,900:latin-ext']
-        }
-      });
-    </script>
+    <script src="./dist/js/main.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

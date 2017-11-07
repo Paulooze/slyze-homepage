@@ -4,6 +4,7 @@
     "google": true,
     "document": true,
     "YT": true,
+    "WebFont": true
   },
   "rules": {
     "no-unused-vars": [0]
