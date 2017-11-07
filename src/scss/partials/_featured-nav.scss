@@ -27,14 +27,14 @@
   max-width: 470px;
 
   &.featured--1 {
-    background: url("/img/featured-item-1.jpg") center center no-repeat;
+    background: url("/dist/img/featured-item-1.jpg") center center no-repeat;
 
     .featured__content {
       background: transparentize($orange, .25);
     }
   }
   &.featured--2 {
-    background: url("/img/featured-item-2.jpg") center center no-repeat;
+    background: url("/dist/img/featured-item-2.jpg") center center no-repeat;
 
     .featured__content {
       background: transparentize($blue, .25);

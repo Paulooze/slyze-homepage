@@ -3,8 +3,6 @@ const webpack = require('webpack');
 
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
-console.log(`Building for environment ${environment}`); // eslint-disable-line no-console
-
 module.exports = {
   entry: [
     path.resolve(__dirname, 'src', 'js', 'main.js'),

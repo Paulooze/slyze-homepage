@@ -13,12 +13,12 @@ body {
 }
 
 body {
-  background: url("/img/hero-background-small.jpg") center top no-repeat #fff;
+  background: url("/dist/img/hero-background-small.jpg") center top no-repeat #fff;
   width: 100vw;
   overflow-x: hidden;
 
   @include for-tablet-landscape-up {
-    background: url("/img/hero-background.jpg") center top no-repeat #fff;
+    background: url("/dist/img/hero-background.jpg") center top no-repeat #fff;
   }
 }
 

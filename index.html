@@ -16,19 +16,19 @@
     <meta name="description" content="Servis a požičovňa lyží do 24h v Bratislave.">
     <meta name="og:title" content="SLYZE | Servis a požičovňa lyží v Bratislave">
     <meta name="og:description" content="Servis a požičovňa lyží do 24h v Bratislave.">
-    <meta name="og:image" content="/img/fb-image.jpg">
+    <meta name="og:image" content="./dist/img/fb-image.jpg">
     <meta name="og:site_name" content="Slyze">
     <meta name="og:locale" content="sk_SK">
     <meta name="og:type" content="website">
     <meta name="og:url" content="https://slyze.sk">
     <meta name="robots" content="index,follow">
     <title>SLYZE | Servis a požičovňa lyží v Bratislave</title>
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="76x76" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#f09d01">
-    <link rel="stylesheet" href="/dist/css/main.css">
+    <link rel="stylesheet" href="./dist/css/main.css">
   </head>
   <body>
     <header class="site-header" role="banner">
@@ -47,13 +47,13 @@
       <div class="bottom-header" id="menu">
         <div class="container bottom-header__container">
           <a href="/" class="header-logo">
-            <img src="/img/header-logo.png" alt="Slyze" class="header-logo__image">
+            <img src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
           </a>
           <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
             <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
             <a href="#o-nas" class="main-nav__link" v-on:click.prevent="scrollToSection">O nás</a>
             <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
-            <a href="#pozicovna" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
+            <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
             <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
           </nav>
           <button role="button" class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}">
@@ -92,7 +92,7 @@
     </section>
     <section class="main-section main-section--right" id="o-nas">
       <div class="container main-section__container">
-        <img src="/img/skiing.png" class="main-section__image" aria-hidden="true">
+        <img src="./dist/img/skiing.png" class="main-section__image" aria-hidden="true">
         <div class="main-section__content">
           <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
           <div class="lists">
@@ -186,7 +186,7 @@
         </div>
       </div>
     </section>
-    <section class="main-section main-section--center" id="pozicovna">
+    <section class="main-section main-section--center" id="cennik">
       <div class="container main-section__container">
         <div class="main-section__content" id="pozicovna">
           <h1 class="main-section__title main-section__title--center" data-title="Požičovňa">Požičovňa</h1>

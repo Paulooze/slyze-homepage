@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'ok'",
     "dev": "./node_modules/.bin/gulp serve",
-    "build": "export NODE_ENV=production && ./node_modules/.bin/gulp build && sh ./build.sh"
+    "build": "export NODE_ENV=production && ./node_modules/.bin/gulp build && ./node_modules/.bin/gulp postbuild && sh ./build.sh"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,8 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "gulp": "^3.9.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-imagemin": "^3.4.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",

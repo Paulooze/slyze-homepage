@@ -9,9 +9,13 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const critical = require('critical').stream;
 const gutil = require('gulp-util');
+const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
+const baseDir = './static/dist';
 
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
+
+console.log(`Building for environment ${environment}`);
 
 gulp.task('sass', () => {
   const plugins = [
@@ -27,20 +31,25 @@ gulp.task('sass', () => {
   .pipe(sourcemaps.init())
   .pipe(postcss(plugins))
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest('./dist/css'))
-  .pipe(browserSync.stream())
+  .pipe(gulp.dest(`${baseDir}/css`))
+});
+
+gulp.task('imagemin', () => {
+  gulp.src('./src/img/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest(`${baseDir}/img`));
 });
 
 gulp.task('webpack', () => gulp
   .src('./src/js/main.js')
   .pipe(gulpWebpack(Object.create(require('./webpack.config')), webpack))
-  .pipe(gulp.dest('./dist/js')));
+  .pipe(gulp.dest(`${baseDir}/js`)));
 
 gulp.task('critical', () => {
   const criticalOpts = {
-    base: '/',
+    base: '/static',
     inline: true,
-    css: ['./dist/css/main.css'],
+    css: [`${baseDir}/css/main.css`],
     dimensions: [{
       width: 400,
       height: 700,
@@ -56,15 +65,15 @@ gulp.task('critical', () => {
     }],
   };
   gulp.src('./index.html')
-  .pipe(critical({...criticalOpts}))
+  .pipe(critical({ ...criticalOpts }))
   .on('error', err => gutil.log(gutil.colors.red(err.message)))
-  .pipe(gulp.dest('./static'))
-})
+  .pipe(gulp.dest('./static'));
+});
 
 gulp.task('serve', () => {
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: './static',
     },
   });
   gulp.watch(['./src/scss/*.scss', './src/scss/partials/*.scss'], ['sass']);
@@ -73,4 +82,5 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', ['serve']);
-gulp.task('build', ['sass', 'webpack', 'critical']);
+gulp.task('build', ['sass', 'webpack']);
+gulp.task('postbuild', ['critical', 'imagemin']);
