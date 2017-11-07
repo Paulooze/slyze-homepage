@@ -85,8 +85,6 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   });
 };
 
-console.log('tu')
-
 const location = {
   lat: 48.153,
   lng: 17.06192,
