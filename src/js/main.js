@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import scrollToElement from 'scroll-to-element';
+import WebFont from 'webfontloader';
 
 /* Vue.config.devtools = process.env.NODE_ENV !== 'production';
 Vue.config.debug = process.env.NODE_ENV !== 'production';
