@@ -7,6 +7,8 @@ const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const critical = require('critical').stream;
+const gutil = require('gulp-util');
 const browserSync = require('browser-sync').create();
 
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -34,6 +36,31 @@ gulp.task('webpack', () => gulp
   .pipe(gulpWebpack(Object.create(require('./webpack.config')), webpack))
   .pipe(gulp.dest('./dist/js')));
 
+gulp.task('critical', () => {
+  const criticalOpts = {
+    base: '/',
+    inline: true,
+    css: ['./dist/css/main.css'],
+    dimensions: [{
+      width: 400,
+      height: 700,
+    }, {
+      width: 768,
+      height: 1024,
+    }, {
+      width: 1024,
+      height: 768,
+    }, {
+      width: 1440,
+      height: 900,
+    }],
+  };
+  gulp.src('./index.html')
+  .pipe(critical({...criticalOpts}))
+  .on('error', err => gutil.log(gutil.colors.red(err.message)))
+  .pipe(gulp.dest('./static'))
+})
+
 gulp.task('serve', () => {
   browserSync.init({
     server: {
@@ -46,4 +73,4 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', ['serve']);
-gulp.task('build', ['sass', 'webpack']);
+gulp.task('build', ['sass', 'webpack', 'critical']);
