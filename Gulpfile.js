@@ -10,6 +10,7 @@ const cssnano = require('cssnano');
 const critical = require('critical').stream;
 const gutil = require('gulp-util');
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const browserSync = require('browser-sync').create();
 const baseDir = './static/dist';
 
@@ -36,6 +37,7 @@ gulp.task('sass', () => {
 
 gulp.task('imagemin', () => {
   gulp.src('./src/img/*')
+  .pipe(webp())
   .pipe(imagemin())
   .pipe(gulp.dest(`${baseDir}/img`));
 });
@@ -50,6 +52,7 @@ gulp.task('critical', () => {
     base: '/static',
     inline: true,
     css: [`${baseDir}/css/main.css`],
+    include: ['.webp', '.no-webp'],
     dimensions: [{
       width: 400,
       height: 700,
@@ -81,7 +84,7 @@ gulp.task('serve', () => {
   });
   gulp.watch(['./src/scss/*.scss', './src/scss/partials/*.scss'], ['sass']);
   gulp.watch(['./src/js/*.js'], ['webpack']);
-  gulp.watch(['./index.html']).on('change', browserSync.reload);
+  gulp.watch(['./index.html'], ['critical']);
 });
 
 gulp.task('default', ['serve']);

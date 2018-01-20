@@ -37,6 +37,7 @@
   @include for-phone-only {
     font-size: .8em;
     font-weight: 400;
+    padding: 0 5px;
     text-align: center;
   }
 }
@@ -51,7 +52,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    height: 53px;
+    min-height: 53px;
 
     &:not(:last-child) {
       border-bottom: 1px solid #ececec;
@@ -66,7 +67,7 @@
     display: flex;
     align-items: center;
     flex: 0 0 90px;
-    padding: 0 25px;
+    padding: 5px 25px;
     justify-content: flex-end;
 
     &.table__col--large {

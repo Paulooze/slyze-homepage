@@ -4,7 +4,7 @@
   @include for-desktop-up {
     width: 45vw;
     height: 645px;
-    position: absolute;
+    position: absolute !important;
     margin: 0;
     z-index: 2;
     left: 0;

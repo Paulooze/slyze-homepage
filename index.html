@@ -47,7 +47,11 @@
       <div class="bottom-header" id="menu">
         <div class="container bottom-header__container">
           <a href="/" class="header-logo">
-            <img data-src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
+            <picture>
+              <source srcset="./dist/img/header-logo.webp" type="image/webp" class="header-logo__image">
+              <source srcset="./dist/img/header-logo.png" type="image/png" class="header-logo__image">
+              <img src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
+            </picture>
           </a>
           <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
             <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
@@ -56,7 +60,7 @@
             <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
             <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
           </nav>
-          <button class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}">
+          <button class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}" aria-label="toggle navigation">
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
             <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span> 
@@ -92,7 +96,11 @@
     </section>
     <section class="main-section main-section--right" id="o-nas">
       <div class="container main-section__container">
-        <img data-src="./dist/img/skiing.png" class="main-section__image" aria-hidden="true">
+        <picture>
+          <source srcset="./dist/img/skiing.webp" class="main-section__image lozad" type="image/webp" aria-hidden="true">
+          <source srcset="./dist/img/skiing.png" class="main-section__image lozad" type="image/png" aria-hidden="true">
+          <img data-src="./dist/img/skiing.png" class="main-section__image lozad" aria-hidden="true">
+        </picture>
         <div class="main-section__content">
           <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
           <div class="lists">
@@ -105,7 +113,7 @@
             <ul class="fa-ul list">
               <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Profesionálny osobný prístup a&nbsp;príjemné prostredie</li>
               <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Bezkonkurenčné otváracie hodiny na&nbsp;celom Slovensku</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Požičovňa lyží &nbsp;obrovským sortimentom</li>
+              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Požičovňa lyží s&nbsp;obrovským sortimentom</li>
             </ul>
           </div>
         </div>
@@ -116,7 +124,7 @@
         <div class="main-section__content" id="tabs">
           <h1 class="main-section__title main-section__title--left" data-title="Servis">Servis</h1>
           <p class="main-section__text">Už 9 rokov vám ponúkame bezkonkurenčný servis v Bratislave.</p>
-          <div class="tabs">
+          <div class="tabs" role="tablist">
             <a role="tab" href="#servis-lyzi" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Servis lyží</a>
             <a role="tab" href="#servis-snowboardov" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Servis snowboardov</a>
             <a role="tab" href="#montaz-viazania" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Montáž viazania</a>
@@ -255,6 +263,28 @@
                   <td class="servis-table__cell">+ 4 &euro;</td>
                   <td class="servis-table__cell">80&euro;</td>
                   <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+                </tr>
+                <tr class="servis-table__row">
+                  <td class="servis-table__cell servis-table__cell--large">Lyže nad 140cm</td>
+                  <td class="servis-table__cell">8 &euro;</td>
+                  <td class="servis-table__cell">16 &euro;</td>
+                  <td class="servis-table__cell">24 &euro;</td>
+                  <td class="servis-table__cell">32 &euro;</td>
+                  <td class="servis-table__cell">40 &euro;</td>
+                  <td class="servis-table__cell">+ 3 &euro;</td>
+                  <td class="servis-table__cell">-</td>
+                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+                </tr>
+                <tr class="servis-table__row">
+                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                  <td class="servis-table__cell">10 &euro;</td>
+                  <td class="servis-table__cell">20 &euro;</td>
+                  <td class="servis-table__cell">30 &euro;</td>
+                  <td class="servis-table__cell">40 &euro;</td>
+                  <td class="servis-table__cell">50 &euro;</td>
+                  <td class="servis-table__cell">+ 5 &euro;</td>
+                  <td class="servis-table__cell">-</td>
+                  <td class="servis-table__cell servis-table__cell--blue">100 &euro;</td>
                 </tr>
               </tbody>
             </table>
@@ -417,14 +447,14 @@
             <div class="map-cols__item">
               <h2>Informácie</h2>
               <p>
-                Telefón: <a href="tel:+421944411758">0944 411 758</a> <br>
+                Telefón: <a href="tel:+421944411758">0944 411 758</a>, <br><a href="tel:+4210903722288">0903 722 288 (konateľ)</a> <br>
                 E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
               </p>
             </div>
           </div>
           <h2>Otváracie hodiny</h2>
           <p>
-            PO-SO: 14:00-19:00<br>
+            PO-SO: 09:00-13:00 (obed) 14:00-19:00<br>
             V iný čas po telefonickej dohode
           </p>
         </div>
@@ -435,9 +465,34 @@
         &copy; 2017 | SLYZE, s.r.o. Všetky práva vyhradené.
       </div>
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc"></script>
-    <script async src="https://www.youtube.com/iframe_api"></script>
-    <script src="./dist/js/main.js"></script>
+    <script>
+      function initializeMap() {
+        const location = {
+          lat: 48.1524901,
+          lng: 17.0621499,
+        };
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: location,
+        });
+        const marker = new google.maps.Marker({
+          position: location,
+          map,
+        });
+
+        google.maps.event.addDomListener(window, 'resize', () => {
+          const center = map.getCenter();
+          map.setCenter(center);
+        });
+
+        window.setTimeout(() => {
+          google.maps.event.trigger(map, 'resize');
+        }, 1000);
+      }
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initializeMap"></script>
+    <script async src="//www.youtube.com/iframe_api"></script>
+    <script async src="./dist/js/main.js"></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",

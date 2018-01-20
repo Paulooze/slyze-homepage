@@ -1,11 +1,8 @@
 import Vue from 'vue';
 import scrollToElement from 'scroll-to-element';
 import WebFont from 'webfontloader';
+import lozad from 'lozad';
 
-/* Vue.config.devtools = process.env.NODE_ENV !== 'production';
-Vue.config.debug = process.env.NODE_ENV !== 'production';
-Vue.config.silent = process.env.NODE_ENV === 'production';
- */
 const tabs1 = new Vue({
   el: '#tabs',
   data() {
@@ -71,11 +68,12 @@ const video = new Vue({
       player.playVideo();
       this.visible = false;
     },
-  }
+  },
 });
 
 window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   player = new YT.Player('video', {
+    host: 'https://www.youtube.com',
     videoId: 'E2HTqYf2-i0',
     playerVars: {
       autoplay: 0,
@@ -86,27 +84,12 @@ window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
   });
 };
 
-const location = {
-  lat: 48.153,
-  lng: 17.06192,
-};
-const map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 16,
-  center: location,
-});
-const marker = new google.maps.Marker({
-  position: location,
-  map,
-});
-
-[].forEach.call(document.querySelectorAll('img[data-src]'), (img) => {
-  img.setAttribute('src', img.getAttribute('data-src'));
-  img.onload = () => img.removeAttribute('data-src'); // eslint-disable-line no-param-reassign
-});
-
 WebFont.load({
   google: {
     families: ['Montserrat:300,400,600,700,900:latin-ext'],
   },
   timeout: 3000,
 });
+
+const observer = lozad();
+observer.observe();

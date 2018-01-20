@@ -1,13 +1,12 @@
 {
-    "name": "Slyze",
-    "icons": [
-        {
-            "src": "/android-chrome-96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#f09d01",
-    "background_color": "#f09d01",
-    "display": "standalone"
+  "name": "Slyze | Servis a požičovňa lyží",
+  "short_name": "Slyze",
+  "icons": [{
+    "src": "/android-chrome-96x96.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  }],
+  "theme_color": "#f09d01",
+  "background_color": "#f09d01",
+  "display": "standalone"
 }
