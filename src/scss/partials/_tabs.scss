@@ -75,5 +75,43 @@
       justify-content: flex-start;
       border-right: 1px solid #ececec;
     }
+
+    &.table-col--tooltip {
+      position: relative;
+
+      &::after {
+        content: "?";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        font-size: 75%;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+
+      &:hover {
+        .table__tooltip {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__tooltip {
+    display: none;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    background: #222;
+    color: #fff;
+    //height: 25px;
+    border-radius: 4px;
+    font-size: 75%;
+    padding: 0 10px;
   }
 }

@@ -53,8 +53,6 @@ const menu = new Vue({
   },
 });
 
-let player;
-
 const video = new Vue({
   el: '#video-wrapper',
   data() {
@@ -65,24 +63,11 @@ const video = new Vue({
   methods: {
     onPlayButtonClick(event) {
       event.preventDefault();
-      player.playVideo();
+      window.player.playVideo();
       this.visible = false;
     },
   },
 });
-
-window.onYouTubeIframeAPIReady = function onYouTubeIframeAPIReady() {
-  player = new YT.Player('video', {
-    host: 'https://www.youtube.com',
-    videoId: 'E2HTqYf2-i0',
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      rel: 0,
-      showinfo: 0,
-    },
-  });
-};
 
 WebFont.load({
   google: {

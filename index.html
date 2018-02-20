@@ -136,15 +136,27 @@
                 <div class="table__col">10 &euro;</div>
               </div>
               <div class="table__row">
-                <div class="table__col table__col--large">Voskovanie</div>
+                <div class="table__col table__col--large">
+                  Voskovanie
+                </div>
                 <div class="table__col">5 &euro;</div>
               </div>
               <div class="table__row">
-                <div class="table__col table__col--large">Malý servis</div>
+                <div class="table__col table__col--large table-col--tooltip">
+                  Malý servis
+                  <div class="table__tooltip">
+                    brúsenie sklznice, uhlovanie hrán, 2x voskovanie
+                  </div>
+                </div>
                 <div class="table__col">15 &euro;</div>
               </div>
               <div class="table__row">
-                <div class="table__col table__col--large">Veľký servis</div>
+                <div class="table__col table__col--large table-col--tooltip">
+                  Veľký servis
+                  <div class="table__tooltip">
+                      brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
+                  </div>
+                </div>
                 <div class="table__col">20 &euro;</div>
               </div>
             </div>
@@ -158,11 +170,21 @@
                 <div class="table__col">10 &euro;</div>
               </div>
               <div class="table__row">
-                <div class="table__col table__col--large">Malý servis</div>
+                <div class="table__col table__col--large table-col--tooltip">
+                  Malý servis
+                  <div class="table__tooltip">
+                    brúsenie sklznice, uhlovanie hrán, 2x voskovanie
+                  </div>
+                </div>
                 <div class="table__col">20 &euro;</div>
               </div>
               <div class="table__row">
-                <div class="table__col table__col--large">Veľký servis</div>
+                <div class="table__col table__col--large table-col--tooltip">
+                  Veľký servis
+                  <div class="table__tooltip">
+                      brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
+                  </div>
+                </div>
                 <div class="table__col">25 &euro;</div>
               </div>
             </div>
@@ -489,6 +511,17 @@
           google.maps.event.trigger(map, 'resize');
         }, 1000);
       }
+      function onYouTubeIframeAPIReady() {
+        window.player = new YT.Player('video', {
+          host: 'https://www.youtube.com',
+          videoId: 'E2HTqYf2-i0',
+          playerVars: {
+            controls: 0,
+            rel: 0,
+            showinfo: 0,
+          },
+        });
+      };
     </script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initializeMap"></script>
     <script async src="//www.youtube.com/iframe_api"></script>
