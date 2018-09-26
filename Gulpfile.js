@@ -38,6 +38,7 @@ gulp.task('sass', () => {
 gulp.task('imagemin', () => {
   gulp.src('./src/img/*')
   .pipe(imagemin())
+  .pipe(webp())
   .pipe(gulp.dest(`${baseDir}/img`));
 });
 
