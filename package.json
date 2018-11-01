@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo 'ok'",
     "dev": "./node_modules/.bin/gulp serve",
-    "build": "export NODE_ENV=production && ./node_modules/.bin/gulp build && ./node_modules/.bin/gulp postbuild && sh ./build.sh"
+    "build": "export NODE_ENV=production && gulp build && gulp postbuild && sh ./build.sh"
   },
   "repository": {
     "type": "git",

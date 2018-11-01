@@ -1,532 +1,562 @@
 <!DOCTYPE html>
 <html lang="sk" dir="ltr">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67961404-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'UA-67961404-1');
-    </script>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
-    <meta name="author" content="FreshIT, s.r.o.">
-    <meta name="description" content="Servis a požičovňa lyží do 24h v Bratislave.">
-    <meta name="og:title" content="SLYZE | Servis a požičovňa lyží v Bratislave">
-    <meta name="og:description" content="Servis a požičovňa lyží do 24h v Bratislave.">
-    <meta name="og:image" content="./dist/img/fb-image.jpg">
-    <meta name="og:site_name" content="Slyze">
-    <meta name="og:locale" content="sk_SK">
-    <meta name="og:type" content="website">
-    <meta name="og:url" content="https://slyze.sk">
-    <meta name="robots" content="index,follow">
-    <title>SLYZE | Servis a požičovňa lyží v Bratislave</title>
-    <link rel="apple-touch-icon" sizes="76x76" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#f09d01">
-    <link rel="stylesheet" href="./dist/css/main.css">
-  </head>
-  <body>
-    <header class="site-header" role="banner">
-      <div class="top-header">
-        <div class="container top-header__container">
-          <div class="contact-box">
-            <span class="contact-box__label">E-mail:</span>
-            <a href="mailto:info@slyze.sk" class="contact-box__link">info@slyze.sk</a>
-          </div>
-          <div class="contact-box">
-            <span class="contact-box__label">Telefón:</span>
-            <a href="tel:+421944411758" class="contact-box__link">+421 944 411 758</a>
-          </div>
-        </div>
-      </div>
-      <div class="bottom-header" id="menu">
-        <div class="container bottom-header__container">
-          <a href="/" class="header-logo">
-            <picture>
-              <source srcset="./dist/img/header-logo.webp" type="image/webp" class="header-logo__image">
-              <source srcset="./dist/img/header-logo.png" type="image/png" class="header-logo__image">
-              <img src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
-            </picture>
-          </a>
-          <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
-            <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
-            <a href="#o-nas" class="main-nav__link" v-on:click.prevent="scrollToSection">O nás</a>
-            <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
-            <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
-            <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
-          </nav>
-          <button class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}" aria-label="toggle navigation">
-            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
-            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
-            <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span> 
-          </button>
-          <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/ServisLyziSLYZE" class="main-nav__button button button--facebook">
-            Náš Facebook
-          </a>
-        </div>
-      </div>
-    </header>
-    <section class="hero" id="domov">
-      <div class="hero__container container">
-        <h1 class="hero__title">
-          Servis a požičovňa <span class="large">lyží a snowboardov</span> v Bratislave
-        </h1>
-      </div>
-    </section>
-    <section class="featured-nav">
-      <div class="container featured-nav__container">
-        <div class="featured featured--1">
-          <div class="featured__content">
-            <span class="featured__title">Servis</span>
-            <p class="featured__text">Servis lyží a snowboardov do 24 hodín</p>
-          </div>
-        </div>
-        <div class="featured featured--2">
-          <div class="featured__content">
-            <span class="featured__title">Akcia</span>
-            <p class="featured__text">Pre základné a stredné školy, lyžiarsky komplet na 7 dní za 30 &euro;.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="main-section main-section--right" id="o-nas">
-      <div class="container main-section__container">
-        <picture>
-          <source srcset="./dist/img/skiing.webp" class="main-section__image lozad" type="image/webp" aria-hidden="true">
-          <source srcset="./dist/img/skiing.png" class="main-section__image lozad" type="image/png" aria-hidden="true">
-          <img data-src="./dist/img/skiing.png" class="main-section__image lozad" aria-hidden="true">
-        </picture>
-        <div class="main-section__content">
-          <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
-          <div class="lists">
-            <ul class="fa-ul list">
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Servis a požičovňa lyží a&nbsp;snowboardov pre&nbsp;vás už 9 rokov</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Bezkonkurenčná rýchlosť poskytovaných služieb</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Profesionálne stroje značky WINTERSTEIGER, MONTANA,&hellip;</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Najlacnejšia požičovňa lyží a&nbsp;snowboardov pre&nbsp;každého</li>
-            </ul>
-            <ul class="fa-ul list">
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Profesionálny osobný prístup a&nbsp;príjemné prostredie</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Bezkonkurenčné otváracie hodiny na&nbsp;celom Slovensku</li>
-              <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Požičovňa lyží s&nbsp;obrovským sortimentom</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="main-section main-section--left main-section--video" id="servis">
-      <div class="container main-section__container main-section__container--video">
-        <div class="main-section__content" id="tabs">
-          <h1 class="main-section__title main-section__title--left" data-title="Servis">Servis</h1>
-          <p class="main-section__text">Už 9 rokov vám ponúkame bezkonkurenčný servis v Bratislave.</p>
-          <div class="tabs" role="tablist">
-            <a role="tab" href="#servis-lyzi" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Servis lyží</a>
-            <a role="tab" href="#servis-snowboardov" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Servis snowboardov</a>
-            <a role="tab" href="#montaz-viazania" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Montáž viazania</a>
-          </div>
-          <div class="tables">
-            <div class="table" v-bind:class="{'is-active': id === 1}">
-              <div class="table__row">
-                <div class="table__col table__col--large">Brúsenie na páse</div>
-                <div class="table__col">10 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large">
-                  Voskovanie
-                </div>
-                <div class="table__col">5 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large table-col--tooltip">
-                  Malý servis
-                  <div class="table__tooltip">
-                    brúsenie sklznice, uhlovanie hrán, 2x voskovanie
-                  </div>
-                </div>
-                <div class="table__col">15 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large table-col--tooltip">
-                  Veľký servis
-                  <div class="table__tooltip">
-                      brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
-                  </div>
-                </div>
-                <div class="table__col">20 &euro;</div>
-              </div>
-            </div>
-            <div class="table" v-bind:class="{'is-active': id === 2}">
-              <div class="table__row">
-                <div class="table__col table__col--large">Brúsenie na páse</div>
-                <div class="table__col">15 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large">Voskovanie</div>
-                <div class="table__col">10 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large table-col--tooltip">
-                  Malý servis
-                  <div class="table__tooltip">
-                    brúsenie sklznice, uhlovanie hrán, 2x voskovanie
-                  </div>
-                </div>
-                <div class="table__col">20 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large table-col--tooltip">
-                  Veľký servis
-                  <div class="table__tooltip">
-                      brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
-                  </div>
-                </div>
-                <div class="table__col">25 &euro;</div>
-              </div>
-            </div>
-            <div class="table" v-bind:class="{'is-active': id === 3}">
-              <div class="table__row">
-                <div class="table__col table__col--large">Montáž viazania</div>
-                <div class="table__col">15 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large">Demontáž viazania</div>
-                <div class="table__col">5 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large">Nastavenie viazania na mieste</div>
-                <div class="table__col">3 &euro;</div>
-              </div>
-              <div class="table__row">
-                <div class="table__col table__col--large">Kontrola vypínania viazania + nastavenie viazania</div>
-                <div class="table__col">10 &euro;</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="video" id="video-wrapper">
-          <div class="video__overlay" v-bind:class="{ 'is-hidden': !visible }">
-            <button class="video__play-button" v-on:click.prevent="onPlayButtonClick">&nbsp;</button>
-          </div>
-          <div id="video" class="video__player"></div>
-        </div>
-      </div>
-    </section>
-    <section class="main-section main-section--center" id="cennik">
-      <div class="container main-section__container">
-        <div class="main-section__content" id="pozicovna">
-          <h1 class="main-section__title main-section__title--center" data-title="Požičovňa">Požičovňa</h1>
-          <div class="tabs tabs--small tabs--center" role="tablist">
-            <a role="tab" href="#snowboard" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Lyže</a>
-            <a role="tab" href="#lyze" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Snowboard</a>
-            <a role="tab" href="#prilba" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Prilba</a>
-            <a role="tab" href="#topanky" class="tabs__item" v-on:click.prevent="setActiveTab(4)" v-bind:class="{'is-active': id === 4}">Topánky</a>
-          </div>
-          <div class="tables">
-            <table class="servis-table" v-bind:class="{'is-active': id === 1}" role="tabpanel">
-              <thead class="servis-table__head">
-                <tr class="servis-table__row">
-                  <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
-                  <th class="servis-table__cell">1 deň</th>
-                  <th class="servis-table__cell">2 dni</th>
-                  <th class="servis-table__cell">3 dni</th>
-                  <th class="servis-table__cell">4 dni</th>
-                  <th class="servis-table__cell">5 - 7 dní</th>
-                  <th class="servis-table__cell">+1 deň</th>
-                  <th class="servis-table__cell">Sezóna</th>
-                  <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
-                </tr>
-              </thead>
-              <tbody class="servis-table__body">
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Lyže do 100cm</td>
-                  <td class="servis-table__cell">4 &euro;</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">12 &euro;</td>
-                  <td class="servis-table__cell">16 &euro;</td>
-                  <td class="servis-table__cell">20 &euro;</td>
-                  <td class="servis-table__cell">+ 2 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">50 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
-                  <td class="servis-table__cell">7 &euro;</td>
-                  <td class="servis-table__cell">14 &euro;</td>
-                  <td class="servis-table__cell">21 &euro;</td>
-                  <td class="servis-table__cell">28 &euro;</td>
-                  <td class="servis-table__cell">35 &euro;</td>
-                  <td class="servis-table__cell">+ 4 &euro;</td>
-                  <td class="servis-table__cell">70 &euro;</td>
-                  <td class="servis-table__cell servis-table__cell--blue">70 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Lyže do 140cm</td>
-                  <td class="servis-table__cell">5 &euro;</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell">15 &euro;</td>
-                  <td class="servis-table__cell">20 &euro;</td>
-                  <td class="servis-table__cell">25 &euro;</td>
-                  <td class="servis-table__cell">+ 2 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">60 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">16 &euro;</td>
-                  <td class="servis-table__cell">24 &euro;</td>
-                  <td class="servis-table__cell">32 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">+ 4 &euro;</td>
-                  <td class="servis-table__cell">80&euro;</td>
-                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Lyže nad 140cm</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">16 &euro;</td>
-                  <td class="servis-table__cell">24 &euro;</td>
-                  <td class="servis-table__cell">32 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">+ 3 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell">20 &euro;</td>
-                  <td class="servis-table__cell">30 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">50 &euro;</td>
-                  <td class="servis-table__cell">+ 5 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">100 &euro;</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 2}">
-              <thead class="servis-table__head">
-                <tr class="servis-table__row">
-                  <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
-                  <th class="servis-table__cell">1 deň</th>
-                  <th class="servis-table__cell">2 dni</th>
-                  <th class="servis-table__cell">3 dni</th>
-                  <th class="servis-table__cell">4 dni</th>
-                  <th class="servis-table__cell">5 - 7 dní</th>
-                  <th class="servis-table__cell">+1 deň</th>
-                  <th class="servis-table__cell">Sezóna</th>
-                  <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
-                </tr>
-              </thead>
-              <tbody class="servis-table__body">
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Snowboard do 120cm</td>
-                  <td class="servis-table__cell">6 &euro;</td>
-                  <td class="servis-table__cell">12 &euro;</td>
-                  <td class="servis-table__cell">18 &euro;</td>
-                  <td class="servis-table__cell">24 &euro;</td>
-                  <td class="servis-table__cell">30 &euro;</td>
-                  <td class="servis-table__cell">+ 3 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">60 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">16 &euro;</td>
-                  <td class="servis-table__cell">24 &euro;</td>
-                  <td class="servis-table__cell">32 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">+ 5 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Snowboard nad 120cm</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">16 &euro;</td>
-                  <td class="servis-table__cell">24 &euro;</td>
-                  <td class="servis-table__cell">32 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">+ 3 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Komplet</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell">20 &euro;</td>
-                  <td class="servis-table__cell">30 &euro;</td>
-                  <td class="servis-table__cell">40 &euro;</td>
-                  <td class="servis-table__cell">50 &euro;</td>
-                  <td class="servis-table__cell">+ 5 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 3}">
-              <thead class="servis-table__head">
-                <tr class="servis-table__row">
-                  <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
-                  <th class="servis-table__cell">1 deň</th>
-                  <th class="servis-table__cell">2 dni</th>
-                  <th class="servis-table__cell">3 dni</th>
-                  <th class="servis-table__cell">4 dni</th>
-                  <th class="servis-table__cell">5 - 7 dní</th>
-                  <th class="servis-table__cell">+1 deň</th>
-                  <th class="servis-table__cell">Sezóna</th>
-                  <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
-                </tr>
-              </thead>
-              <tbody class="servis-table__body">
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Prilba</td>
-                  <td class="servis-table__cell">2 &euro;</td>
-                  <td class="servis-table__cell">4 &euro;</td>
-                  <td class="servis-table__cell">6 &euro;</td>
-                  <td class="servis-table__cell">8 &euro;</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell">+ 1 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">10 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Ku kompletu</td>
-                  <td class="servis-table__cell">1 &euro;</td>
-                  <td class="servis-table__cell">2 &euro;</td>
-                  <td class="servis-table__cell">3 &euro;</td>
-                  <td class="servis-table__cell">4 &euro;</td>
-                  <td class="servis-table__cell">5 &euro;</td>
-                  <td class="servis-table__cell">+ 1 &euro;</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell servis-table__cell--blue">-</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="servis-table" v-bind:class="{'is-active': id === 4}">
-              <thead class="servis-table__head">
-                <tr class="servis-table__row">
-                  <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
-                  <th class="servis-table__cell">1 deň</th>
-                  <th class="servis-table__cell">2 dni</th>
-                  <th class="servis-table__cell">3 dni</th>
-                  <th class="servis-table__cell">4 dni</th>
-                  <th class="servis-table__cell">5 - 7 dní</th>
-                  <th class="servis-table__cell">+1 deň</th>
-                  <th class="servis-table__cell">Sezóna</th>
-                  <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
-                </tr>
-              </thead>
-              <tbody class="servis-table__body">
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Topánky do veľkosti 37</td>
-                  <td class="servis-table__cell">3 &euro;</td>
-                  <td class="servis-table__cell">6 &euro;</td>
-                  <td class="servis-table__cell">9 &euro;</td>
-                  <td class="servis-table__cell">12 &euro;</td>
-                  <td class="servis-table__cell">15 &euro;</td>
-                  <td class="servis-table__cell">+ 1 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">30 &euro;</td>
-                </tr>
-                <tr class="servis-table__row">
-                  <td class="servis-table__cell servis-table__cell--large">Topánky nad veľkosť 37</td>
-                  <td class="servis-table__cell">5 &euro;</td>
-                  <td class="servis-table__cell">10 &euro;</td>
-                  <td class="servis-table__cell">15 &euro;</td>
-                  <td class="servis-table__cell">20 &euro;</td>
-                  <td class="servis-table__cell">25 &euro;</td>
-                  <td class="servis-table__cell">+ 2 &euro;</td>
-                  <td class="servis-table__cell">-</td>
-                  <td class="servis-table__cell servis-table__cell--blue">50 &euro;</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="main-section main-section--right main-section--last" id="kontakt">
-      <div class="container main-section__container main-section__container--map">
-        <div id="map" class="map"></div>
-        <div class="main-section__content">
-          <h1 class="main-section__title main-section__title--left" data-title="Kontakt">Kontakt</h1>
-          <div class="map-cols">
-            <div class="map-cols__item">
-              <h2>Centrála</h2>
-              <p>
-                Karloveská 6C <br>
-                841 04, Bratislava - Karlova Ves
-              </p>
-            </div>
-            <div class="map-cols__item">
-              <h2>Informácie</h2>
-              <p>
-                Telefón: <a href="tel:+421944411758">0944 411 758</a>, <br><a href="tel:+4210903722288">0903 722 288 (konateľ)</a> <br>
-                E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
-              </p>
-            </div>
-          </div>
-          <h2>Otváracie hodiny</h2>
-          <p>
-            PO-SO: 09:00-13:00 (obed) 14:00-19:00<br>
-            V iný čas po telefonickej dohode
-          </p>
-        </div>
-      </div>
-    </section>
-    <footer class="site-footer">
-      <div class="container site-footer__container">
-        &copy; 2017 | SLYZE, s.r.o. Všetky práva vyhradené.
-      </div>
-    </footer>
-    <script>
-      function initializeMap() {
-        const location = {
-          lat: 48.1524901,
-          lng: 17.0621499,
-        };
-        const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 16,
-          center: location,
-        });
-        const marker = new google.maps.Marker({
-          position: location,
-          map,
-        });
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67961404-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-        google.maps.event.addDomListener(window, 'resize', () => {
-          const center = map.getCenter();
-          map.setCenter(center);
-        });
+    gtag('config', 'UA-67961404-1');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
+  <meta name="author" content="FreshIT, s.r.o.">
+  <meta name="description" content="Servis a požičovňa lyží do 24h v Bratislave.">
+  <meta name="og:title" content="SLYZE | Servis a požičovňa lyží v Bratislave">
+  <meta name="og:description" content="Servis a požičovňa lyží do 24h v Bratislave.">
+  <meta name="og:image" content="./dist/img/fb-image.jpg">
+  <meta name="og:site_name" content="Slyze">
+  <meta name="og:locale" content="sk_SK">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://slyze.sk">
+  <meta name="robots" content="index,follow">
+  <title>SLYZE | Servis a požičovňa lyží v Bratislave</title>
+  <link rel="apple-touch-icon" sizes="76x76" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#f09d01">
+  <link rel="stylesheet" href="./dist/css/main.css">
+</head>
 
-        window.setTimeout(() => {
-          google.maps.event.trigger(map, 'resize');
-        }, 1000);
-      }
-      function onYouTubeIframeAPIReady() {
-        window.player = new YT.Player('video', {
-          host: 'https://www.youtube.com',
-          videoId: 'E2HTqYf2-i0',
-          playerVars: {
-            controls: 0,
-            rel: 0,
-            showinfo: 0,
-          },
-        });
+<body>
+  <header class="site-header" role="banner">
+    <div class="top-header">
+      <div class="container top-header__container">
+        <div class="contact-box">
+          <span class="contact-box__label">E-mail:</span>
+          <a href="mailto:info@slyze.sk" class="contact-box__link">info@slyze.sk</a>
+        </div>
+        <div class="contact-box">
+          <span class="contact-box__label">Telefón:</span>
+          <a href="tel:+421944411758" class="contact-box__link">+421 944 411 758</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-header" id="menu">
+      <div class="container bottom-header__container">
+        <a href="/" class="header-logo">
+          <picture>
+            <source srcset="./dist/img/header-logo.webp" type="image/webp" class="header-logo__image">
+            <source srcset="./dist/img/header-logo.png" type="image/png" class="header-logo__image">
+            <img src="./dist/img/header-logo.png" alt="Slyze" class="header-logo__image">
+          </picture>
+        </a>
+        <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
+          <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
+          <a href="#o-nas" class="main-nav__link" v-on:click.prevent="scrollToSection">O nás</a>
+          <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
+          <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
+          <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
+        </nav>
+        <button class="button button--clear nav-toggle" v-on:click.prevent="setActive" v-bind:class="{'is-open': active}"
+          aria-label="toggle navigation">
+          <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
+          <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
+          <span class="nav-toggle__line" aria-hidden="true">&nbsp;</span>
+        </button>
+        <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/ServisLyziSLYZE" class="main-nav__button button button--facebook">
+          Náš Facebook
+        </a>
+      </div>
+    </div>
+  </header>
+  <section class="hero" id="domov">
+    <div class="hero__container container">
+      <h1 class="hero__title">
+        Servis a požičovňa <span class="large">lyží a snowboardov</span> v Bratislave
+      </h1>
+    </div>
+  </section>
+  <section class="featured-nav">
+    <div class="container featured-nav__container">
+      <div class="featured featured--1">
+        <div class="featured__content">
+          <span class="featured__title">Servis</span>
+          <p class="featured__text">Servis lyží a snowboardov do 24 hodín</p>
+        </div>
+      </div>
+      <div class="featured featured--2">
+        <div class="featured__content">
+          <span class="featured__title">Akcia</span>
+          <p class="featured__text">Pre základné a stredné školy, lyžiarsky komplet na 7 dní za 30 &euro;.</p>
+        </div>
+      </div>
+      <div class="featured featured--3">
+        <div class="featured__content">
+          <span class="featured__title">Novinka</span>
+          <p class="featured__text">Ponúkame novú službu - zvoz lyží a snowboardov priamo z domu. Cena 5 &euro;.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main-section main-section--right" id="o-nas">
+    <div class="container main-section__container">
+      <picture>
+        <source srcset="./dist/img/skiing.webp" class="main-section__image lozad" type="image/webp" aria-hidden="true">
+        <source srcset="./dist/img/skiing.png" class="main-section__image lozad" type="image/png" aria-hidden="true">
+        <img data-src="./dist/img/skiing.png" class="main-section__image lozad" aria-hidden="true">
+      </picture>
+      <div class="main-section__content">
+        <h1 class="main-section__title main-section__title--left" data-title="O nás">O nás</h1>
+        <div class="lists">
+          <ul class="fa-ul list">
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Servis a
+              požičovňa lyží a&nbsp;snowboardov pre&nbsp;vás už 9 rokov</li>
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Bezkonkurenčná
+              rýchlosť poskytovaných služieb</li>
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Profesionálne
+              stroje značky WINTERSTEIGER, MONTANA,&hellip;</li>
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Najlacnejšia
+              požičovňa lyží a&nbsp;snowboardov pre&nbsp;každého</li>
+          </ul>
+          <ul class="fa-ul list">
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Profesionálny
+              osobný prístup a&nbsp;príjemné prostredie</li>
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Bezkonkurenčné
+              otváracie hodiny na&nbsp;celom Slovensku</li>
+            <li class="list__item"><i class="fa fa-li fa-snowflake-o list__icon" aria-hidden="true"></i>Požičovňa lyží
+              s&nbsp;obrovským sortimentom</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main-section main-section--left main-section--video" id="servis">
+    <div class="container main-section__container main-section__container--video">
+      <div class="main-section__content" id="tabs">
+        <h1 class="main-section__title main-section__title--left" data-title="Servis">Servis</h1>
+        <p class="main-section__text">Už 9 rokov vám ponúkame bezkonkurenčný servis v Bratislave.</p>
+        <div class="tabs" role="tablist">
+          <a role="tab" href="#servis-lyzi" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Servis
+            lyží</a>
+          <a role="tab" href="#servis-snowboardov" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Servis
+            snowboardov</a>
+          <a role="tab" href="#montaz-viazania" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Montáž
+            viazania</a>
+        </div>
+        <div class="tables">
+          <div class="table is-active">
+            <div class="table__row">
+              <div class="table__col table__col--large">
+                Zvoz lyží a snowboardov (Bratislava) - po telefonickej dohode
+              </div>
+              <div class="table__col">
+                5 &euro;
+              </div>
+            </div>
+          </div>
+          <div class="table" v-bind:class="{'is-active': id === 1}">
+            <div class="table__row">
+              <div class="table__col table__col--large">Brúsenie na páse</div>
+              <div class="table__col">10 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large">
+                Voskovanie
+              </div>
+              <div class="table__col">5 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large table-col--tooltip">
+                Malý servis
+                <div class="table__tooltip">
+                  brúsenie sklznice, uhlovanie hrán, 2x voskovanie
+                </div>
+              </div>
+              <div class="table__col">15 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large table-col--tooltip">
+                Veľký servis
+                <div class="table__tooltip">
+                  brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
+                </div>
+              </div>
+              <div class="table__col">20 &euro;</div>
+            </div>
+          </div>
+          <div class="table" v-bind:class="{'is-active': id === 2}">
+            <div class="table__row">
+              <div class="table__col table__col--large">Brúsenie na páse</div>
+              <div class="table__col">15 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large">Voskovanie</div>
+              <div class="table__col">10 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large table-col--tooltip">
+                Malý servis
+                <div class="table__tooltip">
+                  brúsenie sklznice, uhlovanie hrán, 2x voskovanie
+                </div>
+              </div>
+              <div class="table__col">20 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large table-col--tooltip">
+                Veľký servis
+                <div class="table__tooltip">
+                  brúsenie sklznice, uhlovanie hrán, 2x voskovanie, kompletné zalievanie rýh
+                </div>
+              </div>
+              <div class="table__col">25 &euro;</div>
+            </div>
+          </div>
+          <div class="table" v-bind:class="{'is-active': id === 3}">
+            <div class="table__row">
+              <div class="table__col table__col--large">Montáž viazania</div>
+              <div class="table__col">15 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large">Demontáž viazania</div>
+              <div class="table__col">5 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large">Nastavenie viazania na mieste</div>
+              <div class="table__col">3 &euro;</div>
+            </div>
+            <div class="table__row">
+              <div class="table__col table__col--large">Kontrola vypínania viazania + nastavenie viazania</div>
+              <div class="table__col">10 &euro;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video" id="video-wrapper">
+        <div class="video__overlay" v-bind:class="{ 'is-hidden': !visible }">
+          <button class="video__play-button" v-on:click.prevent="onPlayButtonClick">&nbsp;</button>
+        </div>
+        <div id="video" class="video__player"></div>
+      </div>
+    </div>
+  </section>
+  <section class="main-section main-section--center" id="cennik">
+    <div class="container main-section__container">
+      <div class="main-section__content" id="pozicovna">
+        <h1 class="main-section__title main-section__title--center" data-title="Požičovňa">Požičovňa</h1>
+        <div class="tabs tabs--small tabs--center" role="tablist">
+          <a role="tab" href="#snowboard" class="tabs__item" v-on:click.prevent="setActiveTab(1)" v-bind:class="{'is-active': id === 1}">Lyže</a>
+          <a role="tab" href="#lyze" class="tabs__item" v-on:click.prevent="setActiveTab(2)" v-bind:class="{'is-active': id === 2}">Snowboard</a>
+          <a role="tab" href="#prilba" class="tabs__item" v-on:click.prevent="setActiveTab(3)" v-bind:class="{'is-active': id === 3}">Prilba</a>
+          <a role="tab" href="#topanky" class="tabs__item" v-on:click.prevent="setActiveTab(4)" v-bind:class="{'is-active': id === 4}">Topánky</a>
+        </div>
+        <div class="tables">
+          <table class="servis-table" v-bind:class="{'is-active': id === 1}" role="tabpanel">
+            <thead class="servis-table__head">
+              <tr class="servis-table__row">
+                <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
+                <th class="servis-table__cell">1 deň</th>
+                <th class="servis-table__cell">2 dni</th>
+                <th class="servis-table__cell">3 dni</th>
+                <th class="servis-table__cell">4 dni</th>
+                <th class="servis-table__cell">5 - 7 dní</th>
+                <th class="servis-table__cell">+1 deň</th>
+                <th class="servis-table__cell">Sezóna</th>
+                <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
+              </tr>
+            </thead>
+            <tbody class="servis-table__body">
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Lyže do 100cm</td>
+                <td class="servis-table__cell">4 &euro;</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">12 &euro;</td>
+                <td class="servis-table__cell">16 &euro;</td>
+                <td class="servis-table__cell">20 &euro;</td>
+                <td class="servis-table__cell">+ 2 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">50 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                <td class="servis-table__cell">7 &euro;</td>
+                <td class="servis-table__cell">14 &euro;</td>
+                <td class="servis-table__cell">21 &euro;</td>
+                <td class="servis-table__cell">28 &euro;</td>
+                <td class="servis-table__cell">35 &euro;</td>
+                <td class="servis-table__cell">+ 4 &euro;</td>
+                <td class="servis-table__cell">70 &euro;</td>
+                <td class="servis-table__cell servis-table__cell--blue">70 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Lyže do 140cm</td>
+                <td class="servis-table__cell">5 &euro;</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell">15 &euro;</td>
+                <td class="servis-table__cell">20 &euro;</td>
+                <td class="servis-table__cell">25 &euro;</td>
+                <td class="servis-table__cell">+ 2 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">60 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">16 &euro;</td>
+                <td class="servis-table__cell">24 &euro;</td>
+                <td class="servis-table__cell">32 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">+ 4 &euro;</td>
+                <td class="servis-table__cell">80&euro;</td>
+                <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Lyže nad 140cm</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">16 &euro;</td>
+                <td class="servis-table__cell">24 &euro;</td>
+                <td class="servis-table__cell">32 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">+ 3 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell">20 &euro;</td>
+                <td class="servis-table__cell">30 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">50 &euro;</td>
+                <td class="servis-table__cell">+ 5 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">100 &euro;</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="servis-table" v-bind:class="{'is-active': id === 2}">
+            <thead class="servis-table__head">
+              <tr class="servis-table__row">
+                <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
+                <th class="servis-table__cell">1 deň</th>
+                <th class="servis-table__cell">2 dni</th>
+                <th class="servis-table__cell">3 dni</th>
+                <th class="servis-table__cell">4 dni</th>
+                <th class="servis-table__cell">5 - 7 dní</th>
+                <th class="servis-table__cell">+1 deň</th>
+                <th class="servis-table__cell">Sezóna</th>
+                <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
+              </tr>
+            </thead>
+            <tbody class="servis-table__body">
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Snowboard do 120cm</td>
+                <td class="servis-table__cell">6 &euro;</td>
+                <td class="servis-table__cell">12 &euro;</td>
+                <td class="servis-table__cell">18 &euro;</td>
+                <td class="servis-table__cell">24 &euro;</td>
+                <td class="servis-table__cell">30 &euro;</td>
+                <td class="servis-table__cell">+ 3 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">60 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">16 &euro;</td>
+                <td class="servis-table__cell">24 &euro;</td>
+                <td class="servis-table__cell">32 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">+ 5 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Snowboard nad 120cm</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">16 &euro;</td>
+                <td class="servis-table__cell">24 &euro;</td>
+                <td class="servis-table__cell">32 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">+ 3 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Komplet</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell">20 &euro;</td>
+                <td class="servis-table__cell">30 &euro;</td>
+                <td class="servis-table__cell">40 &euro;</td>
+                <td class="servis-table__cell">50 &euro;</td>
+                <td class="servis-table__cell">+ 5 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="servis-table" v-bind:class="{'is-active': id === 3}">
+            <thead class="servis-table__head">
+              <tr class="servis-table__row">
+                <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
+                <th class="servis-table__cell">1 deň</th>
+                <th class="servis-table__cell">2 dni</th>
+                <th class="servis-table__cell">3 dni</th>
+                <th class="servis-table__cell">4 dni</th>
+                <th class="servis-table__cell">5 - 7 dní</th>
+                <th class="servis-table__cell">+1 deň</th>
+                <th class="servis-table__cell">Sezóna</th>
+                <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
+              </tr>
+            </thead>
+            <tbody class="servis-table__body">
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Prilba</td>
+                <td class="servis-table__cell">2 &euro;</td>
+                <td class="servis-table__cell">4 &euro;</td>
+                <td class="servis-table__cell">6 &euro;</td>
+                <td class="servis-table__cell">8 &euro;</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell">+ 1 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">10 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Ku kompletu</td>
+                <td class="servis-table__cell">1 &euro;</td>
+                <td class="servis-table__cell">2 &euro;</td>
+                <td class="servis-table__cell">3 &euro;</td>
+                <td class="servis-table__cell">4 &euro;</td>
+                <td class="servis-table__cell">5 &euro;</td>
+                <td class="servis-table__cell">+ 1 &euro;</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell servis-table__cell--blue">-</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="servis-table" v-bind:class="{'is-active': id === 4}">
+            <thead class="servis-table__head">
+              <tr class="servis-table__row">
+                <th class="servis-table__cell servis-table__cell--large">&nbsp;</th>
+                <th class="servis-table__cell">1 deň</th>
+                <th class="servis-table__cell">2 dni</th>
+                <th class="servis-table__cell">3 dni</th>
+                <th class="servis-table__cell">4 dni</th>
+                <th class="servis-table__cell">5 - 7 dní</th>
+                <th class="servis-table__cell">+1 deň</th>
+                <th class="servis-table__cell">Sezóna</th>
+                <th class="servis-table__cell servis-table__cell--blue">Záloha</th>
+              </tr>
+            </thead>
+            <tbody class="servis-table__body">
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Topánky do veľkosti 37</td>
+                <td class="servis-table__cell">3 &euro;</td>
+                <td class="servis-table__cell">6 &euro;</td>
+                <td class="servis-table__cell">9 &euro;</td>
+                <td class="servis-table__cell">12 &euro;</td>
+                <td class="servis-table__cell">15 &euro;</td>
+                <td class="servis-table__cell">+ 1 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">30 &euro;</td>
+              </tr>
+              <tr class="servis-table__row">
+                <td class="servis-table__cell servis-table__cell--large">Topánky nad veľkosť 37</td>
+                <td class="servis-table__cell">5 &euro;</td>
+                <td class="servis-table__cell">10 &euro;</td>
+                <td class="servis-table__cell">15 &euro;</td>
+                <td class="servis-table__cell">20 &euro;</td>
+                <td class="servis-table__cell">25 &euro;</td>
+                <td class="servis-table__cell">+ 2 &euro;</td>
+                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell servis-table__cell--blue">50 &euro;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main-section main-section--right main-section--last" id="kontakt">
+    <div class="container main-section__container main-section__container--map">
+      <div id="map" class="map"></div>
+      <div class="main-section__content">
+        <h1 class="main-section__title main-section__title--left" data-title="Kontakt">Kontakt</h1>
+        <div class="map-cols">
+          <div class="map-cols__item">
+            <h2>Centrála</h2>
+            <p>
+              Karloveská 6C <br>
+              841 04, Bratislava - Karlova Ves
+            </p>
+          </div>
+          <div class="map-cols__item">
+            <h2>Informácie</h2>
+            <p>
+              Telefón: <a href="tel:+421944411758">0944 411 758</a>, <br><a href="tel:+4210903722288">0903 722 288
+                (konateľ)</a> <br>
+              E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
+            </p>
+          </div>
+        </div>
+        <h2>Otváracie hodiny (november)</h2>
+        <p>
+          PO-SO: 13:00 - 18:00<br>
+          V iný čas po telefonickej dohode
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="container site-footer__container">
+      &copy; 2017 | SLYZE, s.r.o. Všetky práva vyhradené.
+    </div>
+  </footer>
+  <script>
+    function initializeMap() {
+      const location = {
+        lat: 48.1524901,
+        lng: 17.0621499,
       };
-    </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initializeMap"></script>
-    <script async src="//www.youtube.com/iframe_api"></script>
-    <script async src="./dist/js/main.js"></script>
-    <script type="application/ld+json">
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: location,
+      });
+      const marker = new google.maps.Marker({
+        position: location,
+        map,
+      });
+
+      google.maps.event.addDomListener(window, 'resize', () => {
+        const center = map.getCenter();
+        map.setCenter(center);
+      });
+
+      window.setTimeout(() => {
+        google.maps.event.trigger(map, 'resize');
+      }, 1000);
+    }
+    function onYouTubeIframeAPIReady() {
+      window.player = new YT.Player('video', {
+        host: 'https://www.youtube.com',
+        videoId: 'E2HTqYf2-i0',
+        playerVars: {
+          controls: 0,
+          rel: 0,
+          showinfo: 0,
+        },
+      });
+    };
+  </script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initializeMap"></script>
+  <script async src="//www.youtube.com/iframe_api"></script>
+  <script async src="./dist/js/main.js"></script>
+  <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "LocalBusiness",
@@ -548,5 +578,6 @@
         }
       }
     </script>
-  </body>
+</body>
+
 </html>
