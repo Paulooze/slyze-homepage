@@ -5,10 +5,10 @@
   height: 55px;
   background: $lighBlue;
   padding: 5px;
-  box-shadow: 0 10px 25px transparentize(#96a7bc, .6);
+  box-shadow: 0 10px 25px transparentize(#96a7bc, 0.6);
 
   &.tabs--small {
-    max-width: 480px;
+    max-width: 720px;
   }
 
   &.tabs--center {
@@ -26,7 +26,7 @@
   flex: 1;
   text-decoration: none;
   font-weight: 600;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   &:hover,
   &.is-active {
@@ -35,7 +35,7 @@
   }
 
   @include for-phone-only {
-    font-size: .8em;
+    font-size: 0.8em;
     font-weight: 400;
     padding: 0 5px;
     text-align: center;
@@ -80,7 +80,7 @@
       position: relative;
 
       &::after {
-        content: "?";
+        content: '?';
         display: flex;
         align-items: center;
         justify-content: center;

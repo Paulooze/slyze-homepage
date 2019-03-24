@@ -1,0 +1,77 @@
+.testimonials {
+  @include for-tablet-landscape-up {
+    display: flex;
+    margin: 0 -15px 40px;
+  }
+}
+
+.testimonial {
+  box-shadow: 0 15px 30px rgba(#96a7bc, 0.4);
+  padding: 20px;
+  margin-bottom: 15px;
+
+  @include for-tablet-landscape-up {
+    flex: 0 0 calc(33% - 15px);
+    margin: 0 15px 0;
+  }
+}
+
+.testimonial__title {
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.testimonial__text {
+  font-style: italic;
+  position: relative;
+}
+
+.testimonials__meta {
+  text-align: center;
+}
+
+.testimonials__main-button {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  background: $orange;
+  text-decoration: none;
+  color: #fff;
+  padding: 0 16px;
+  margin-right: 16px;
+
+  &:hover {
+    background: darken($orange, 5%);
+    color: #fff;
+  }
+}
+
+.testimonials__secondary-button {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  background: $lighBlue;
+  text-decoration: none;
+  color: $blue;
+  padding: 0 16px;
+
+  &:hover {
+    background: darken($lighBlue, 5%);
+    color: $blue;
+  }
+}
+
+.testimonial__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.testimonial__stars {
+  width: 100px;
+  height: 19px;
+  background: url('/dist/img/star.svg') left center repeat-x;
+  background-size: 20px 19px;
+  margin-left: auto;
+}

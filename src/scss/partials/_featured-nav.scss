@@ -22,30 +22,66 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  box-shadow: 0 15px 30px transparentize(#96a7bc, 0.4);
+  box-shadow: 0 15px 30px rgba(#96a7bc, 0.4);
+  background-size: cover;
   max-width: 470px;
   margin-bottom: 30px;
+  text-decoration: none;
+
+  &:hover {
+    box-shadow: 0 30px 60px rgba(#96a7bc, 0.4);
+  }
 
   &.featured--1 {
     background: url('/dist/img/featured-item-1.jpg') center center no-repeat;
+    background-size: cover;
 
     .featured__content {
-      background: transparentize($orange, 0.25);
+      background: rgba($orange, 0.75);
     }
   }
   &.featured--2 {
     background: url('/dist/img/featured-item-2.jpg') center center no-repeat;
+    background-size: cover;
 
     .featured__content {
-      background: transparentize($blue, 0.25);
+      background: rgba($blue, 0.75);
     }
   }
 
   &.featured--3 {
     background: url('/dist/img/featured-item-3.jpg') center center no-repeat;
+    background-size: cover;
 
     .featured__content {
-      background: transparentize($blue, 0.25);
+      background: rgba($blue, 0.75);
+    }
+  }
+
+  &.featured--4 {
+    background: url('/dist/img/featured-item-4.jpg') center center no-repeat;
+    background-size: cover;
+
+    .featured__content {
+      background: rgba($blue, 0.75);
+    }
+  }
+
+  &.featured--5 {
+    background: url('/dist/img/featured-item-5.jpg') center center no-repeat;
+    background-size: cover;
+
+    .featured__content {
+      background: rgba($orange, 0.75);
+    }
+  }
+
+  &.featured--6 {
+    background: url('/dist/img/featured-item-6.jpg') center center no-repeat;
+    background-size: cover;
+
+    .featured__content {
+      background: rgba($orange, 0.75);
     }
   }
 
@@ -64,13 +100,27 @@
 }
 
 .featured__content {
-  flex: 0 0 50%;
   padding: 30px;
   color: #fff;
+  flex: 0 0 75%;
+  width: 75%;
+
+  &.featured__content--large {
+    p {
+      font-weight: 600;
+      font-size: 120%;
+    }
+  }
+  @include for-tablet-landscape-up {
+    flex: 0 0 50%;
+    width: 50%;
+  }
 }
 
 .featured__title {
+  display: block;
   font-size: 2em;
+  line-height: 1;
   margin: 0 0 15px;
   font-weight: 700;
 }

@@ -32,7 +32,7 @@ const tabs2 = new Vue({
 });
 
 const menu = new Vue({
-  el: '#menu',
+  el: '.js-menu',
   data() {
     return {
       active: false,
@@ -53,18 +53,29 @@ const menu = new Vue({
   },
 });
 
-const video = new Vue({
-  el: '#video-wrapper',
+const footer = new Vue({
+  el: '#footer',
   data() {
     return {
-      visible: true,
+      year: new Date().getFullYear(),
     };
   },
+});
+
+const contact = new Vue({
+  el: '#kontakt',
   methods: {
-    onPlayButtonClick(event) {
+    navClick(event) {
       event.preventDefault();
-      window.player.playVideo();
-      this.visible = false;
+      const lat = 48.1524901;
+      const long = 17.0621499;
+      if (
+        navigator.platform.indexOf('iPhone') !== -1 ||
+        navigator.platform.indexOf('iPod') !== -1 ||
+        navigator.platform.indexOf('iPad') !== -1
+      ) {
+        window.open(`maps://maps.google.com/maps?daddr=${lat},${long}&amp;ll=`);
+      } else window.open(`http://maps.google.com/maps?daddr=${lat},${long}&amp;ll=`);
     },
   },
 });
