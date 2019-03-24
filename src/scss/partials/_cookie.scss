@@ -1,0 +1,49 @@
+.cookie {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: $lightBlue;
+  align-items: center;
+  z-index: 9999;
+  font-size: 90%;
+  display: none;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.cookie__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.cookie__link {
+  display: block;
+  color: $blue;
+  margin-right: 15px;
+
+  &:hover {
+    color: darken($blue, 3%);
+  }
+}
+
+.cookie__button {
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  color: #fff;
+  background: $blue;
+  padding: 0 16px;
+
+  &:hover {
+    background: darken($blue, 3%);
+  }
+}

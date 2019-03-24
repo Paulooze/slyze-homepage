@@ -51,13 +51,13 @@
   display: inline-flex;
   align-items: center;
   height: 48px;
-  background: $lighBlue;
+  background: $lightBlue;
   text-decoration: none;
   color: $blue;
   padding: 0 16px;
 
   &:hover {
-    background: darken($lighBlue, 5%);
+    background: darken($lightBlue, 5%);
     color: $blue;
   }
 }

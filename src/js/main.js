@@ -62,6 +62,33 @@ const footer = new Vue({
   },
 });
 
+const isGDPRModalOpen = () => window.location.hash === '#podmienky';
+
+const modals = new Vue({
+  el: '#modals',
+  data() {
+    return {
+      isCookieModalOpen: false,
+      isGDPRModalOpen: isGDPRModalOpen(),
+    };
+  },
+  methods: {
+    openCookieModal() {
+      this.isCookieModalOpen = true;
+    },
+    closeCookieModal() {
+      this.isCookieModalOpen = false;
+    },
+    openGDPRModal() {
+      this.isGDPRModalOpen = true;
+    },
+    closeGDPRModal() {
+      this.isGDPRModalOpen = false;
+      window.history.pushState({}, '', '/');
+    },
+  },
+});
+
 const contact = new Vue({
   el: '#kontakt',
   methods: {
@@ -76,6 +103,34 @@ const contact = new Vue({
       ) {
         window.open(`maps://maps.google.com/maps?daddr=${lat},${long}&amp;ll=`);
       } else window.open(`http://maps.google.com/maps?daddr=${lat},${long}&amp;ll=`);
+    },
+    openGDPRModal() {
+      modals.openGDPRModal();
+    },
+  },
+});
+
+const isCookieBarVisible = () => {
+  if (localStorage.getItem('cookie_consent') == null) {
+    return true;
+  }
+  return !localStorage.getItem('cookie_consent');
+};
+
+const cookie = new Vue({
+  el: '#cookie',
+  data() {
+    return {
+      isVisible: isCookieBarVisible(),
+    };
+  },
+  methods: {
+    okClick() {
+      this.isVisible = false;
+      localStorage.setItem('cookie_consent', true);
+    },
+    moreClick() {
+      modals.openCookieModal();
     },
   },
 });

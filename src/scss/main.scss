@@ -1,4 +1,4 @@
-@import "base";
+@import 'base';
 
 * {
   box-sizing: border-box;
@@ -9,21 +9,35 @@ body {
   font-size: 100%;
   line-height: 1.6;
   color: $grey;
-  font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+  font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
 }
 
 body {
-  background: url("/dist/img/hero-background-small.jpg") center top no-repeat #fff;
+  background: url('/dist/img/hero-background-small.jpg') center top no-repeat
+    #fff;
   width: 100vw;
   overflow-x: hidden;
 
   @include for-tablet-landscape-up {
-    background: url("/dist/img/hero-background.jpg") center top no-repeat #fff;
+    background: url('/dist/img/hero-background.jpg') center top no-repeat #fff;
   }
+}
+
+body,
+input,
+textarea,
+button {
+  font-size: 16px;
 }
 
 .container {
   @include container;
+}
+
+h1 {
+  font-size: 1.4em;
+  font-weight: 600;
+  margin: 0 0 30px;
 }
 
 h2 {
@@ -32,15 +46,24 @@ h2 {
   margin: 0 0 20px;
 }
 
+p {
+  margin: 15px 0;
+}
+
 a {
   color: $orange;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   &:hover {
     color: darken($orange, 15%);
   }
 }
 
+ol {
+  margin: 15px 0;
+  padding-left: 25px;
+  list-style-type: decimal;
+}
 .progressive {
   overflow: hidden;
 

@@ -718,11 +718,12 @@
                 (konateľ)</a> <br>
               E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
             </p>
+            <p><a href="#podmienky" v-on:click.prevent="openGDPRModal">Podmienky pre spracovanie osobných údajov</a></p>
           </div>
         </div>
         <h2>Otváracie hodiny</h2>
         <p>
-          P0-SO: 10:00 - 19:00<br>
+          P0-SO: 14:00 - 19:00<br>
           NE: zatvorené<br>
           V iný čas po telefonickej dohode<br>
         </p>
@@ -734,6 +735,97 @@
       &copy; {{year}} | SLYZE, s.r.o. Všetky práva vyhradené.
     </div>
   </footer>
+  <div class="cookie" id="cookie" v-if="isVisible" v-bind:class="{'is-open': isVisible}">
+    <div class="container">Pri používaní tejto stránky dochádza k spracovaniu cookies, ktoré nám pomáhajú zvyšovať
+      kvalitu služieb. Spracovaniu cookies zabránite zmenou nastavenia v internetovom prehliadači.
+      <div class="cookie__actions">
+        <a href="#viac-info" class="cookie__link" v-on:click.prevent="moreClick">Viac informácií</a>
+        <button type="button" class="cookie__button" v-on:click.prevent="okClick">Rozumiem</button>
+      </div>
+    </div>
+  </div>
+  <div id="modals">
+    <div class="modal" v-if="isCookieModalOpen" v-bind:class="{'is-open': isCookieModalOpen}">
+      <section class="modal__inner">
+        <button type="button" class="modal__button" v-on:click.prevent="closeCookieModal">×</button>
+        <div class="modal__content">
+          <h1>Súbory Cookies</h1>
+          <p>Tento web používa k poskytovaniu služieb, personalizácii reklám a analýze návštevnosti súbory cookie. Používaním tohoto webu s tým súhlasíte.</p>
+          <h2>Čo sú cookies?</h2>
+          <p>Cookie je malý súbor tvorený písmenami a číslicami, ktorý počítač s webovou stránkou prostredníctvom prehliadača odosiela do vášho počítača alebo mobilného telefónu (ďalej označovaných ako „zariadenie“) a ukladá na pevnom disku vášho zariadenia. Súbory cookie nám umožňujú rozlíšiť vás od ostatných užívateľov našich webových stránok. Vďaka nim vám môžeme ponúknuť lepšie zážitky pri prehliadaní našich webových stránok a neustále zlepšovať svoje služby.</p>
+          <p>Každá webová stránka môže do vášho prehliadača odosielať svoje vlastné súbory cookie, pokiaľ to umožňuje nastavenie vášho prehladača. Váš prehliadač však (v záujme ochrany vášho súkromia) umožňuje webovým stránkam prístup iba k tým súborom cookie, ktoré tieto stránky do vášho zariadenia samé odoslali, nie k súborom cookie odoslaných inými webovými stránkami. Mnohé webové stránky to robia vždy, keď ich užívateľ navštívi. Môžu tak lepšie sledovať on-line prevádzku.</p>
+          <h2>Čo sú cookies?</h2>
+          <p>V niektorých prípadoch používame reklamné súbory cookie tretích strán, ktoré nám umožňujú pochopiť a zlepšiť účinnosť našej reklamy ako na našich vlastných webových stránkach, tak na webových stránkach tretích strán. Tieto súbory cookie sa niekedy používajú pre personalizáciu, zmenu zacielenia a optimalizáciu on-line reklamy.</p>
+          <p>Táto stránka používa službu Google Analytics, poskytovanú spoločnosťou Google, Inc. (ďalej len "Google"). Služba Google Analytics používa súbory "cookies", ktoré sú textovými súbormi ukladané do vášho počítača umožňujúceho analýzu spôsobu užívania tejto stránky ich užívateľmi. Informácie vygenerované súborom cookie o užívaní stránky (vrátane vašej IP adresy) budú spoločnosťou Google prenesené a uložené na serveroch v Spojených štátoch. Google bude používať tieto informácie pre účely vyhodnocovania užívania stránky a vytvárania správ o jej aktivite, určených pre ich prevádzkovateľov, a pre poskytovanie ďalších služieb týkajúcich sa činností na stránke a užívaní internetu vôbec. Google môže tiež poskytnúť tieto informácie tretím osobám, ak to bude požadované zákonom alebo budú tieto tretie osoby spracovávať tieto informácie pre  Google. Google nebude spájať vašu IP adresu s akýmikoľvek inými dátami, ktoré má k dispozícii. Môžete odmietnuť používanie súborov cookies voľbou v príslušnom nastavení vo vašom prehliadači, avšak uvedomte si, že pokiaľ tak urobíte,  nebudete schopní plne využívať všetky funkcie tejto stránky. Používaním tejto stránky súhlasíte so spracovávaním údajov o vás spoločnosti Google, a to spôsobom a k účelom hore uvedeným.</p>
+          <h2>Ako odmietnuť súbory cookie?</h2>
+          <p>Používaním našich webových stránok vyjadrujete svoj súhlas s používaním tu popísaných súborov cookie.</p>
+          <p>Všetky moderné prehliadače vám  umožňujú zmeniť nastavenia souborov cookie. Svoje zariadenie si môžete nastaviť tak, aby prijímalo všetky súbory cookie, aby vás upozornilo na vydanie súboru cookie, alebo aby nikdy neprijímalo súbory cookie. Pokiaľ zvolíte poslednú možnosť, znamená to, že vám nemôžu byť ponúknuté určité personalizované funkcie, a preto nebudete môcť plne využívať všetky funkcie príslušných webových stránok. Každý prehliadač je iný, prejdite si preto vo svojom prehliadači ponuku „nápoveda“, „možnosti“ alebo „predvoľby“, kde sa dozviete, ako zmeniť nastavenie súborov cookie.</p>
+        </div>
+      </section>
+    </div>
+    <div class="modal" v-if="isGDPRModalOpen" v-bind:class="{'is-open': isGDPRModalOpen}">
+      <div class="modal__inner">
+        <button class="modal__button" type="button" v-on:click.prevent="closeGDPRModal">×</button>
+        <div class="modal__content">
+            <h1>Podmienky pre spracovanie osobných údajov</h1>
+            <h2>1. Prevádzkovateľ osobných údajov:</h2>
+            <p>Prevádzkovateľom osobných údajov, teda subjekt, ktorý spracováva osobné údaje dotknutej osoby, je spoločnosť Slyze s.r.o.so sídlom Pribišova 17, 84105 Bratislava, IČO: 48 210 307 zapísaná v Obchodnom registri Okresného súdu Bratislava I, oddiel: sro, vložka číslo:  105001/B (ďalej len „Prevádzkovateľ “).</p>
+            <p>Prevádzkovateľ postupuje pri spracovaní osobných údajov v súlade so zákonom 122/2013 Z. z. o ochrane osobných údajov, v znení neskorších predpisov a ďalšími právnymi predpismi (ďalej len „zákon č. 122/2013 Z.z.“). Od 25.5.2018 sa bude Prevádzkovateľ namiesto zákona č. 122/2013 Z.z. riadiť pri spracovaní osobných údajov dotknutých osôb Nariadením Európskeho parlamentu a Rady (EÚ) 2016/679 o ochrane fyzických osôb pri spracúvaní osobných údajov a o voľnom pohybe takýchto údajov (všeobecné nariadenie o ochrane údajov) a zákonom č. 18/2018 Z.z, o ochrane osobných údajov a o zmene a doplnení niektorých zákonov.</p>
+            <h2>2. Účely a právny základ spracovania osobných údajov:</h2>
+            <p>V prípade existencie zmluvného vzťahu dotknutej osoby s Prevádzkovateľom, Prevádzkovateľ spracováva osobné údaje dotknutých osôb na základe právneho titulu zmluvy, a to výlučne v rozsahu nevyhnutnom na plnenie účelov tejto zmluvy.</p>
+            <p>Prevádzkovateľ spracováva za účelom riešenia podnetov, vybavovania nedostatkov, organizovania čitateľských súťaží a ankiet osobné údaje dotknutých osôb na základe právneho titulu oprávneného záujmu alebo súhlasu dotknutej osoby, a to výlučne v rozsahu meno, priezvisko, adresa, e-mail, telefónne číslo, ktorých spracovanie je potrebné na dosiahnutie uvedeného.</p>
+            <p>V prípade ak dotknutá osoba dobrovoľne bez predchádzajúceho pričinenia Prevádzkovateľa oznámi Prevádzkovateľovi svoje osobné údaje, budú tieto osobné údaje Prevádzkovateľom spracované v nevyhnutnom rozsahu na základe právneho titulu oprávneného záujmu (najmä za účelom posúdenia žiadosti dotknutej osoby a poskytnutia odpovede dotknutej osobe).</p>
+            <h2>3. Doba uchovania osobných údajov:</h2>
+            <p>Všetky osobné údaje sú spracovávané len v rozsahu potrebnom pre naplnenie účelov uvedených v bode 2 týchto Podmienok a len po dobu nutnú pre dosiahnutie uvedených účelov, najdlhšie však po dobu určenú príslušnými právnymi predpismi či v súlade s nimi.</p>
+            <p>Osobné údaje spracúvané Prevádzkovateľom z právneho titulu súhlasu dotknutej sú spracovávané do odvolania súhlasu; Prevádzkovateľ však môže aj po odvolaní súhlasu niektoré tieto údaje spracovávať, ak má na to iný zákonný dôvod (napr. pre preukázanie správnosti a zákonnosti postupu pri spracúvaní osobných údajov alebo pre možnosť obrany proti právnym nárokom).</p>
+            <p>Osobné údaje spracúvané Prevádzkovateľom z právneho titulu oprávneného záujmu alebo osobné údaje spracovávané Prevádzkovateľom za účelom priameho marketingu sú spracovávané do podania námietky dotknutej osoby proti spracovaniu jej osobných údajov.</p>
+            <h2>4. Identifikácia príjemcov osobných údajov:</h2>
+            <p>Prevádzkovateľ môže sprístupniť osobné údaje dotknutých osôb tretím osobám iba v prípadoch, keď jej to bude ukladať alebo umožňovať zákon alebo so súhlasom dotknutej osoby. Prevádzkovateľ sprístupňuje osobné údaje len v obvyklom rozsahu spracovateľom či iným príjemcom:</p>
+            <ol>
+              <li>dodávateľom externých služieb pre Prevádzkovateľa (najmä programátorské či iné podporné technické služby, serverové služby, rozosielanie e-mailov, služby súvisiace s meraním návštevnosti našich stránok a prispôsobovania ich obsahu preferenciám používateľov),</li>
+              <li>prevádzkovateľom záložných serverov či prevádzkovateľom technológií využívaných Prevádzkovateľom, ktorí ich spracovávajú na zabezpečenie funkčnosti príslušných služieb Prevádzkovateľa,</li>
+              <li>v nevyhnutne potrebnom rozsahu právnym, ekonomickým a daňovým poradcom Prevádzkovateľa a audítorom Prevádzkovateľa, ktorí ich spracovávajú za účelom poskytovania poradenských služieb Prevádzkovateľovi.</li>
+            </ol>
+            <h2>5. Práva dotknutých osôb:</h2>
+            <ol>
+              <li>(Právo na prístup k osobným údajom) dotknutá osoba má právo vyžadovať od Prevádzkovateľa na základe žiadosti potvrdenie o tom, či sú alebo nie sú osobné údaje dotknutej osoby spracovávané, a v kladnom prípade žiadať poskytnutie informácií o spracovávaní osobných údajov, ktoré sa dotknutej osoby týkajú.</li>
+              <li>dotknutá osoba má právo na opravu osobných údajov ktoré sa jej týkajú a so zreteľom na účel spracovania osobných údajov a na doplnenie neúplných osobných údajov.</li>
+              <li>V prípade spracovania osobných údajov z právneho titulu zmluvy alebo z právneho titulu súhlasu dotknutej osoby, má dotknutá osoba právo na prenosnosť osobných údajov ktoré sa jej týkajú a ktoré poskytla Prevádzkovateľovi, a to v štruktúrovanom bežne používanom a strojovou čitateľnom formáte, ak dochádza ku spracovaniu osobných údajov dotknutej osoby automatizovanou formou a pred uplynutím doby uchovania osobných údajov. Uplatnenie tohto práva nesmie mať nepriaznivé dôsledky na práva iných osôb.</li>
+              <li>Dotknutá osoba má právo na likvidáciu osobných údajov (právo na výmaz osobných údajov) ktoré sú predmetom spracúvania ak:</li>
+              <ol>
+                <li>sú osobné údaje spracúvané v rozpore so zákonom alebo</li>
+                <li>na základe odvolania súhlasu dotknutej osoby (v prípade spracúvania osobných údajov z právneho titulu súhlasu dotknutej osoby) alebo</li>
+                <li>dotknutá osoba namieta proti spracovaniu osobných údajov spracúvaných z právneho titulu oprávneného záujmu Prevádzkovateľa a neprevažujú oprávnené dôvody Prevádzkovateľa na spracovanie osobných údajov alebo</li>
+                <li>osobné údaje už nie sú potrebné pre účel pre ktorý boli získané alebo pre ktorý sa inak spracúvali alebo</li>
+                <li>po uplynutí času uchovania osobných údajov.</li>
+              </ol>
+            </ol>
+            <p>Právo na likvidáciu osobných údajov podľa bodu 5 písm. d) sa neuplatňuje ak je spracovanie osobných údajov potrebné pre Prevádzkovateľa na:</p>
+            <ol>
+              <li>uplatnenie práva na slobodu prejavu alebo</li>
+              <li>uplatnenie práva na informácie,</li>
+              <li>plnenie povinností podľa zákona č. 18/2018 o ochrane osobných údajov a o zmene a doplnení ďalších zákonov (účinného od 25.5.2018) alebo osobitného predpisu,</li>
+              <li>uplatnenie právneho nároku</li>
+              <li>na účel archivácie, na vedecký účel, na účel historického výskumu alebo na štatistický účel podľa § 78 ods. 8, ak je pravdepodobné, že právo podľa odseku 1 znemožní alebo závažným spôsobom sťaží dosiahnutie cieľov takého spracúvania.</li>
+              <li>Právo na obmedzenie spracúvania osobných údajov ak:</li>
+              <ol>
+                <li>dotknutá osoba namieta správnosť osobných údajov, a to počas obdobia umožňujúceho Prevádzkovateľovi overiť správnosť osobných údajov a prípadnú aktualizáciu osobných údajov,</li>
+                <li>spracúvanie osobných údajov je nezákonné a dotknutá osoba namieta vymazanie osobných údajov a žiada namiesto toho obmedzenie ich použitia,</li>
+                <li>Prevádzkovateľ už nepotrebuje osobné údaje na účel spracúvania osobných údajov, ale potrebuje ich dotknutá osoba na uplatnenie právneho nároku, alebo</li>
+                <li>dotknutá osoba namieta spracúvanie osobných údajov podľa § 27 ods. 1 zákona č. 18/2018 o ochrane osobných údajov a o zmene a doplnení ďalších zákonov (účinného od 25.5.2018), a to až do overenia, či oprávnené dôvody na strane prevádzkovateľa prevažujú nad oprávnenými dôvodmi dotknutej osoby.</li>
+              </ol>
+              <li>Právo namietať spracúvanie osobných údajov:</li>
+              <ol>
+                <li>Dotknutá osoba má právo namietať spracúvanie osobných údajov, ktoré sa jej týkajú vo všetkých prípadoch, kde právnym titulom spracovania osobných údajov je oprávnený záujem Prevádzkovateľa.</li>
+                <li>Dotknutá osoba má právo namietať spracúvanie osobných údajov, ktoré sa jej týkajú aj v prípade, ak sú tieto osobné údaje spracúvané za účelom priameho marketingu vrátane profilovania, v rozsahu, v akom súvisí s priamym marketingom.</li>
+                <li>Pri podozrení, že sa osobné údaje neoprávnene spracúvajú má dotknutá osoba právo na podanie návrhu na začatie konania o ochrane osobných údajov na Úrad na ochranu osobných údajov.</li>
+                <li>Ak právnym dôvodom spracovania osobných údajov dotknutej osoby je jej súhlas, môže dotknutá osoba taký súhlas kedykoľvek bezplatne odvolať na nižšie uvedenej emailovej adrese. Odvolaním súhlasu nie je dotknutá zákonnosť spracovania vychádzajúceho zo súhlasu, ktorý bol daný pred jeho odvolaním. Dotknutá osoba má právo súhlas kedykoľvek odvolať prostredníctvom e-mailu na adrese info@slyze.sk alebo písomne na adresu Prevádzkovateľa, ktorá je: Pribišova 17, 84105 Bratislava</li>
+              </ol>
+            </ol>
+        </div>
+      </div>
+    </div>
+  </div>
   <script>
     function initializeMap() {
       window.setTimeout(() => {
