@@ -1,5 +1,4 @@
 .site-header {
-
 }
 
 .top-header {
@@ -27,7 +26,7 @@
 }
 
 .contact-box__label {
-  font-size: .75em;
+  font-size: 0.75em;
   color: #fff;
   font-weight: 300;
   display: block;
@@ -60,10 +59,9 @@
   flex-direction: row;
   align-items: stretch;
   background: #fff;
-  box-shadow: 0 7px 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
 
   @include for-tablet-landscape-up {
-
   }
 }
 
@@ -87,7 +85,7 @@
   top: 70px;
   right: 0;
   left: 0;
-  box-shadow: 0 7px 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
 
   &.is-active {
     display: block;
@@ -103,7 +101,7 @@
   }
 
   @include for-desktop-up {
-    margin-left: 100px;
+    // margin-left: 100px;
   }
 }
 
@@ -125,12 +123,12 @@
     color: $grey;
     height: auto;
     border-bottom: 3px solid transparent;
-    transition: all .4s ease-in-out;
-  
+    transition: all 0.4s ease-in-out;
+
     &:not(:last-child) {
       //margin-right: 55px;
     }
-  
+
     &:hover {
       color: $blue;
       border-color: $blue;
@@ -158,7 +156,7 @@
   position: relative;
   margin: 0 15px 0 auto;
   align-self: center;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   &__line {
     position: absolute;
@@ -167,7 +165,7 @@
     left: 0;
     background: $blue;
     border-radius: 4px;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     &:first-child {
       top: 0;

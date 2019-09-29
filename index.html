@@ -60,6 +60,7 @@
           <a href="#o-nas" class="main-nav__link" v-on:click.prevent="scrollToSection">O nás</a>
           <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
           <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
+          <a href="https://eshop.slyze.sk" class="main-nav__link" target="_blank" rel="noopener noreferrer">E-shop</a>
           <a href="#bazar" class="main-nav__link" v-on:click.prevent="scrollToSection">Bazár</a>
           <a href="#kontakt" class="main-nav__link" v-on:click.prevent="scrollToSection">Kontakt</a>
         </nav>
@@ -826,6 +827,12 @@
       </div>
     </div>
   </div>
+  <div id="fb-root"></div>
+  <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="1923943231163344"
+    theme_color="#ffc300">
+    </div>
   <script>
     function initializeMap() {
       window.setTimeout(() => {
@@ -855,6 +862,21 @@
   </script>
   <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTCmC09-jSaGodYucaKzI0SKwnSAcYNc&amp;callback=initializeMap"></script>
   <script async src="./dist/js/main.js"></script>
+  <script async>
+    window.fbAsyncInit = function() {
+    FB.init({
+    xfbml            : true,
+    version          : 'v4.0'
+    });
+    };
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/sk_SK/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
   <script type="application/ld+json">
       {
         "@context": "http://schema.org",
