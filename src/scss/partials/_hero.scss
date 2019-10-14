@@ -16,23 +16,23 @@
 }
 
 .hero__title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 900;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
-  text-shadow: 0 7px 7px rgba(0, 0, 0, .4);
-  
+  text-shadow: 0 7px 7px rgba(0, 0, 0, 0.4);
+
   .large {
     font-size: 30px;
     display: block;
   }
-  
+
   @include for-tablet-landscape-up {
-    font-size: 40px;
+    font-size: 26px;
 
     .large {
-      font-size: 60px;
+      font-size: 46px;
     }
   }
 }

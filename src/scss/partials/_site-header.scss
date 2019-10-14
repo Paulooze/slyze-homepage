@@ -95,8 +95,8 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    margin-left: 30px;
     position: static;
+    margin: 0 auto;
     box-shadow: none;
   }
 
@@ -116,7 +116,7 @@
 
   @include for-tablet-landscape-up {
     align-items: center;
-    padding: 0 10px;
+    padding: 0 5px;
     font-size: 1em;
     text-decoration: none;
     background: transparent;
