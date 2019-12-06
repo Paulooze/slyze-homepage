@@ -4,9 +4,7 @@ const webpack = require('webpack');
 const environment = process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
-  entry: [
-    path.resolve(__dirname, 'src', 'js', 'main.js'),
-  ],
+  entry: [path.resolve(__dirname, 'src', 'js', 'main.js')],
   output: {
     path: path.resolve(__dirname, 'dist', 'js'),
     filename: 'main.js',
@@ -31,14 +29,15 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
     }),
-    environment === 'production' && new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      output: {
-        comments: false,
-      },
-      sourceMap: false,
-    }),
-  ],
+    environment === 'production' &&
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        },
+        output: {
+          comments: false,
+        },
+        sourceMap: false,
+      }),
+  ].filter(Boolean),
 };

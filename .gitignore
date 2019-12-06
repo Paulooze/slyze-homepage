@@ -4,3 +4,6 @@ node_modules/
 temp-*
 static/*
 !static/.gitkeep
+.DS_Store
+logs
+.vscode

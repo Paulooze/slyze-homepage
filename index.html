@@ -2,14 +2,11 @@
 <html lang="sk" dir="ltr">
 
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67961404-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-67961404-1');
-  </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-P23X7BG');</script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
@@ -33,6 +30,8 @@
 </head>
 
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P23X7BG"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <header class="site-header" role="banner">
     <div class="top-header">
       <div class="container top-header__container">
@@ -57,7 +56,7 @@
         </a>
         <nav class="main-nav" role="navigation" v-bind:class="{'is-active': active}">
           <a href="#domov" class="main-nav__link" v-on:click.prevent="scrollToSection">Domov</a>
-          <a href="https://eshop.slyze.sk" class="main-nav__link" target="_blank" rel="noopener noreferrer">E-shop</a>
+          <a href="https://eshop.slyze.sk" class="main-nav__link main-nav__link--highlight" target="_blank" rel="noopener noreferrer">E-shop</a>
           <a href="#cennik" class="main-nav__link" v-on:click.prevent="scrollToSection">Požičovňa</a>
           <a href="#servis" class="main-nav__link" v-on:click.prevent="scrollToSection">Servis</a>
           <a href="https://eshop.slyze.sk/bazar" class="main-nav__link" target="_blank" rel="noopener noreferrer">Bazár</a>
@@ -149,40 +148,26 @@
       <div class="main-section__content">
         <h1 class="main-section__title main-section__title--left" data-title="Predaj">Predaj</h1>
         <p class="main-section__text main-section--left">
-          Predávame nové testovacie lyže 2019/2020 za bezkonkurenčné ceny, príďte si ich ku nám vyskúšať. Viac informácií nájdete na <a href="https://eshop.slyze.sk">eshop.slyze.sk</a>
+          Predávame nové testovacie lyže 2019/2020 za bezkonkurenčné ceny, príďte si ich ku nám vyskúšať. 
+        </p>
+        <p>
+          <a class="button button--primary" href="https://eshop.slyze.sk/">Prejsť do e-shopu</a>
         </p>
       </div>
-      <a href="https://eshop.slyze.sk/"><img src="/dist/img/predaj-1.jpg" class="video"></a>
+      <div class="image-wrap"><img src="/dist/img/predaj-1.jpg" class="image-wrap__img"></div>
     </div>
   </section>
-  <section class="main-section main-section--center main-section--padding" id="bazar">
-    <div class="container main-section__container">
-      <h1 class="main-section__title main-section__title--center" data-title="Bazár">Bazár</h1>
-      <p class="main-section__text main-section__text--center">Náš bohatý sortiment určite osloví aj tých najnáročnejších. Príďte sa ku nám pozrieť, alebo nám zavolajte. Viac informácií nájdete na <a href="https://eshop.slyze.sk/bazar">eshop.slyze.sk/bazar</a></p>
-    </div>
-    <div class="container featured-nav__container">
-        <div class="featured featured--4">
-          <div class="featured__content featured__content--large">
-            <span class="featured__title">Detské lyže</span>
-            <p class="featured__text">30 &euro; - 60 &euro;</p>
-            <p class="featured__text">70cm - 100cm</p>
-          </div>
-        </div>
-        <div class="featured featured--5">
-          <div class="featured__content featured__content--large">
-            <span class="featured__title">Juniorské lyže</span>
-            <p class="featured__text">60 &euro; - 90 &euro;</p>
-            <p class="featured__text">100cm - 140cm</p>
-          </div>
-        </div>
-        <div class="featured featured--6">
-          <div class="featured__content featured__content--large">
-            <span class="featured__title">Dospelé lyže</span>
-            <p class="featured__text">60 &euro; - 120 &euro;</p>
-            <p class="featured__text">140cm - 180cm</p>
-          </div>
-        </div>
+  <section class="main-section main-section--right main-section--padding" id="bazar">
+    <div class="container main-section__container main-section__container--video">
+      <div class="main-section__content">
+        <h1 class="main-section__title main-section__title--right" data-title="Bazár">Bazár</h1>
+        <p class="main-section__text main-section--right">Náš bohatý sortiment v cenách od od 30 &euro; určite osloví aj tých najnáročnejších. Príďte sa ku nám pozrieť, alebo nám zavolajte.</p>
+        <p class="main-section__text main-section--right"> 
+          <a class="button button--primary" href="https://eshop.slyze.sk/bazar">Prejsť do bazáru</a>
+        </p>
       </div>
+      <div class="image-wrap image-wrap--right"><img src="/dist/img/bazar-1.jpg" class="image-wrap__img"></div>
+    </div>
   </section>
   <section class="main-section main-section--left main-section--video" id="servis">
     <div class="container main-section__container main-section__container--video">
@@ -342,7 +327,7 @@
                 <td class="servis-table__cell">32 &euro;</td>
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">+ 4 &euro;</td>
-                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell">79 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -353,7 +338,7 @@
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">50 &euro;</td>
                 <td class="servis-table__cell">+ 6 &euro;</td>
-                <td class="servis-table__cell">120 &euro;</td>
+                <td class="servis-table__cell">119 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">120 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -364,7 +349,7 @@
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">50 &euro;</td>
                 <td class="servis-table__cell">+ 4 &euro;</td>
-                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell">99 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">100 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -375,7 +360,7 @@
                 <td class="servis-table__cell">52 &euro;</td>
                 <td class="servis-table__cell">65 &euro;</td>
                 <td class="servis-table__cell">+ 6 &euro;</td>
-                <td class="servis-table__cell">140&euro;</td>
+                <td class="servis-table__cell">139 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">140 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -386,8 +371,8 @@
                 <td class="servis-table__cell">64 &euro;</td>
                 <td class="servis-table__cell">80 &euro;</td>
                 <td class="servis-table__cell">+ 6 &euro;</td>
-                <td class="servis-table__cell">-</td>
-                <td class="servis-table__cell servis-table__cell--blue">150 &euro;</td>
+                <td class="servis-table__cell">50%</td>
+                <td class="servis-table__cell servis-table__cell--blue">50%</td>
               </tr>
               <tr class="servis-table__row">
                 <td class="servis-table__cell servis-table__cell--large">Komplet</td>
@@ -397,8 +382,8 @@
                 <td class="servis-table__cell">72 &euro;</td>
                 <td class="servis-table__cell">90 &euro;</td>
                 <td class="servis-table__cell">+ 8 &euro;</td>
-                <td class="servis-table__cell">180 &euro;</td>
-                <td class="servis-table__cell servis-table__cell--blue">200 &euro;</td>
+                <td class="servis-table__cell">50%</td>
+                <td class="servis-table__cell servis-table__cell--blue">50%</td>
               </tr>
             </tbody>
           </table>
@@ -425,7 +410,7 @@
                 <td class="servis-table__cell">16 &euro;</td>
                 <td class="servis-table__cell">20 &euro;</td>
                 <td class="servis-table__cell">+ 2 &euro;</td>
-                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell">49 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">50 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -436,7 +421,7 @@
                 <td class="servis-table__cell">28 &euro;</td>
                 <td class="servis-table__cell">35 &euro;</td>
                 <td class="servis-table__cell">+ 4 &euro;</td>
-                <td class="servis-table__cell">70 &euro;</td>
+                <td class="servis-table__cell">69 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">70 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -447,7 +432,7 @@
                 <td class="servis-table__cell">20 &euro;</td>
                 <td class="servis-table__cell">25 &euro;</td>
                 <td class="servis-table__cell">+ 2 &euro;</td>
-                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell">59&euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">60 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -458,7 +443,7 @@
                 <td class="servis-table__cell">32 &euro;</td>
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">+ 4 &euro;</td>
-                <td class="servis-table__cell">80&euro;</td>
+                <td class="servis-table__cell">79 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -469,7 +454,7 @@
                 <td class="servis-table__cell">32 &euro;</td>
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">+ 3 &euro;</td>
-                <td class="servis-table__cell">-</td>
+                <td class="servis-table__cell">79 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">80 &euro;</td>
               </tr>
               <tr class="servis-table__row">
@@ -480,7 +465,7 @@
                 <td class="servis-table__cell">40 &euro;</td>
                 <td class="servis-table__cell">50 &euro;</td>
                 <td class="servis-table__cell">+ 5 &euro;</td>
-                <td class="servis-table__cell">100 &euro;</td>
+                <td class="servis-table__cell">99 &euro;</td>
                 <td class="servis-table__cell servis-table__cell--blue">100 &euro;</td>
               </tr>
             </tbody>
@@ -721,7 +706,7 @@
           <div class="map-cols__item">
             <h2>Informácie</h2>
             <p>
-              Telefón: <a href="tel:+421944411758">+421 944 411 758</a>, <br><a href="tel:+4210903722288">+421 903 722 288
+              Telefón: <a href="tel:+421944411758">+421 944 411 758</a>, <br><a href="tel:+421903722288">+421 903 722 288
                 (konateľ)</a> <br>
               E-mail: <a href="mailto:info@slyze.sk">info@slyze.sk</a>
             </p>
@@ -730,8 +715,7 @@
         </div>
         <h2>Otváracie hodiny</h2>
         <p>
-          PO-SO: 15:00 - 19:00<br>
-          NE: zatvorené<br>
+          PO-NE: 10:00 - 20:00<br>
           V iný čas po telefonickej dohode<br>
         </p>
       </div>
