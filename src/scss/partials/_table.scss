@@ -41,7 +41,7 @@
     .servis-table__cell {
       &:not(.servis-table__cell--large) {
         font-weight: 600;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
 
         &:hover {
           background: $orange;
@@ -58,4 +58,8 @@
       }
     }
   }
+}
+
+.table-mark {
+  padding: 10px 25px 0;
 }

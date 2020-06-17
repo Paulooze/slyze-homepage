@@ -17,8 +17,16 @@ body {
   width: 100vw;
   overflow-x: hidden;
 
+  &.no-bg {
+    background: none;
+  }
+
   @include for-tablet-landscape-up {
     background: url('/dist/img/hero-background.jpg') center top no-repeat #fff;
+
+    &.no-bg {
+      background: none;
+    }
   }
 }
 

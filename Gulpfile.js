@@ -90,6 +90,13 @@ gulp.task('critical', () => {
     .pipe(gulp.dest('./static'));
 });
 
+gulp.task('html', () => {
+  gulp.src('./predajna.html').pipe(gulp.dest('./static'));
+  gulp.src('./zlava-na-nakup.html').pipe(gulp.dest('./static'));
+  gulp.src('./zlava-na-pozicanie.html').pipe(gulp.dest('./static'));
+  gulp.src('./zlava-na-servis.html').pipe(gulp.dest('./static'));
+});
+
 gulp.task('serve', () => {
   browserSync.init({
     server: {
@@ -99,8 +106,9 @@ gulp.task('serve', () => {
   gulp.watch(['./src/scss/*.scss', './src/scss/partials/*.scss'], ['sass']);
   gulp.watch(['./src/js/*.js'], ['webpack']);
   gulp.watch(['./index.html'], ['critical']);
+  gulp.watch(['./predajna.html', ['html']]);
 });
 
 gulp.task('default', ['serve']);
-gulp.task('build', ['sass', 'webpack']);
+gulp.task('build', ['sass', 'webpack', 'html']);
 gulp.task('postbuild', ['critical', 'imagemin']);
