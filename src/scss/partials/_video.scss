@@ -1,48 +1,98 @@
-.image-wrap {
-  max-width: 100%;
-  margin-top: 20px;
-  position: relative;
-  border-radius: 6px;
+.video {
+  margin: 20px auto;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 
-  &::before {
-    content: "";
+  &::after {
+    padding-top: 56.25%;
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    box-shadow: inset 0 0 55px 25px rgba(0, 0, 0, 0.6);
-    z-index: 20;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in-out;
+    content: '';
   }
 
+  &__player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   @include for-desktop-up {
+    margin: 0;
     display: block;
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 0;
     width: 45vw;
 
-    &.image-wrap--right {
-      left: 0;
+    &::after {
+      display: none;
     }
 
-    &:hover {
-      &::before {
-        opacity: 0;
+    &.video--right {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 25px 0 24%;
+    }
+
+    &.video--left {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 25px 0 24%;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparentize($color: $orange, $amount: 0.2);
+      z-index: 2;
+
+      &.is-hidden {
+        display: none;
+      }
+    }
+
+    &__play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 335px;
+      height: 335px;
+      background: transparent url('/img/play-button.png') center center no-repeat;
+      border: 0;
+      cursor: pointer;
+      outline: 0;
+      transition: all 0.4s ease-in-out;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.05);
       }
     }
   }
 }
 
-.image-wrap__img {
-  display: block;
-  object-fit: contain;
+.video-container {
+  overflow: hidden;
   position: relative;
-  z-index: 0;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: '';
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

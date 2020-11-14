@@ -144,10 +144,7 @@
 
 .list__item {
   position: relative;
-
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
 }
 
 .list__icon {
